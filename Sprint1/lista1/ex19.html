@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Ex19 - Lucas Osakwe</title>
+    </head>
+    <body>
+        <h1>Ki base do Guerreiro Sayajin: 2000</h1>
+        <div id="SSJ_transformation">
+            <img src="Imagens/baseGOKU.png" alt="">
+        </div>
+        <div class="buttons">
+            <button type="button" onclick="transformar1();">Transformar em SSJ</button>
+            <button type="button" onclick="transformar2();">Transformar em SSJ2</button>
+            <button type="button" onclick="transformar3();">Transformar em SSJ3</button>
+            <button type="button" onclick="back_base();">Voltar para a forma Base</button>
+        </div>
+        <p id="textoKI"></p>
+    </body>
+    <script>
+        function transformar1(){
+            document.getElementById('textoKI').innerHTML = "ki na forma SSJ: 100000";
+            document.getElementById('SSJ_transformation').innerHTML = "<img src= 'Imagens/SSJ.png'>";
+            document.getElementById('textoKI').style.color = "blue";
+        }
+        function transformar2(){
+            document.getElementById('textoKI').innerHTML = "ki na forma SSJ: 200000";
+            document.getElementById('SSJ_transformation').innerHTML = "<img src= 'Imagens/SSJ2.png'>";
+            document.getElementById('textoKI').style.color = "yellow";
+            document.getElementById('textoKI').style.backgroundColor = "blue";
+        }
+        function transformar3(){
+            document.getElementById('textoKI').innerHTML = "ki na forma SSJ: 4000000";
+            document.getElementById('SSJ_transformation').innerHTML = "<img src= 'Imagens/SSJ3.png'>";
+            document.getElementById('textoKI').style.color = "orange";
+            document.getElementById('textoKI').style.backgroundColor = "yellow";
+        }
+        function back_base(){
+            document.getElementById('textoKI').innerHTML = "";
+            document.getElementById('SSJ_transformation').innerHTML = "<img src= 'Imagens/baseGOKU.png'>";
+            document.getElementById('textoKI').style.background = "";
+            document.getElementById('textoKI').style.color = "";
+        }
+    </script>
+</html>

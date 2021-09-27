@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Ex10 - Lucas Osakwe</title>
+    </head>
+    <body>
+        <div class="container">
+            <div class="content">
+                Saldo da conta: <input type="text" placeholder="R$" id="saldo_conta"> 
+                <button type="button" onclick="financas();">Verificar finanças</button>
+                <p id="msg"></p>
+            </div>
+        </div>
+    </body>
+    <script>
+        function financas(){
+            var conta = Number(saldo_conta.value);
+            if(conta == 0){
+                document.getElementById("msg").innerHTML = `Conta zerada.`;
+            }
+            else if(conta < 0){
+                document.getElementById("msg").innerHTML = `Está devendo!`;
+            }
+            else{
+                document.getElementById("msg").innerHTML = `Saldo positivo!`;
+            }
+            saldo_conta.value = '';
+        }
+    </script>
+</html>

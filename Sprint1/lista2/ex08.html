@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Ex08 - Lucas Osakwe</title>
+        <style>
+            .descontos_spn{
+                font-weight: bold;
+            }
+            #descontos{
+                display: none;
+            }
+            #descontos h1 span{
+                color: green;
+            }
+        </style>
+    </head>
+    <body>
+        <input type="text" placeholder="Digite seu salário" id="salario_inpt">
+        <button type="button" onclick="descontos();">Calcular descontos</button>
+        <div id="descontos">
+            <h1>Com um salário de <span id="salario_inpt_h1"></span>, esses serão os descontos:</h1>
+            <p>
+                Seus descontos serão de:<br>
+                INSS: <span class="descontos_spn" id="inss_spn"></span><br>
+                IR: <span class="descontos_spn" id="ir_spn"></span><br>
+                Total de descontos: <span class="descontos_spn" id="total_spn"></span><br>
+                Seu salário, após os descontos será de: <span class="descontos_spn" id="new_salario_spn"></span>
+            </p>
+        </div>
+    </body>
+    <script>
+        function descontos(){
+            var inss = (Number(salario_inpt.value * 0.1)).toFixed(2);
+            var ir = Number(salario_inpt.value * 0.2).toFixed(2);
+            var total = (Number(inss) + Number(ir)).toFixed(2);
+            var new_salario = Number((salario_inpt.value) - (total)).toFixed(2);
+            document.getElementById('inss_spn').innerHTML = `R$ ${inss}`;
+            document.getElementById('ir_spn').innerHTML = `R$ ${ir}`;
+            document.getElementById('total_spn').innerHTML = `R$ ${total}`;
+            document.getElementById('new_salario_spn').innerHTML = `R$ ${new_salario}`;
+            document.getElementById('descontos').style.display = "block";
+            document.getElementById('salario_inpt_h1').innerHTML = `R$ ${Number(salario_inpt.value).toFixed(2)}`;
+            salario_inpt.value = '';
+        }
+    </script>
+</html>

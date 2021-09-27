@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Ex12 - Lucas Osakwe</title>
+        <style>
+            body{
+                margin: 0;
+                padding: 0;
+            }
+            .container{
+                margin: 100px;
+                text-align: center;
+                display: flex;
+                justify-content: center;
+            }
+            .content{
+                background-color: #fff;
+                width: fit-content;
+                height: fit-content;
+                box-shadow: 0 0 1em rgb(182, 180, 180);
+                padding: 100px;
+                border-radius: 12px;
+            }
+            .buttons{
+                margin-top: 20px;
+            }
+            .buttons button{
+                font-size: 15px;
+                padding: 5px;
+            }
+            .content label input{
+                font-size: 15px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="content">
+                <h1>Valor guardado no cofrinho: <br> R$ <span id="din_cofrinho_spn">0.00</span></h1>
+                <label for="">R$ <input type="text" placeholder="Valor a ser depositado" id="valor_deposito_inpt"></label>
+                <div class="buttons">
+                    <button type="button" onclick="money();">Depositar</button>
+                    <button type="button" onclick="zerar();">Tirar toda a grana</button>
+                </div>
+                <p id="n_depositos"></p>
+                <p id="n_saques"></p>
+            </div>
+        </div>
+    </body>
+    <script>
+        var cofrinho = 0;
+        var n_deposito = 0;
+        var n_saque = 0;
+        function money(){
+            var deposito = Number(valor_deposito_inpt.value);
+            var soma = (Number(cofrinho) + Number(deposito)).toFixed(2); 
+            cofrinho = soma;
+            document.getElementById('din_cofrinho_spn').innerHTML = `${cofrinho}`;
+            n_deposito++;
+            document.getElementById('n_depositos').innerHTML = `Número de depósitos realizados: ${n_deposito}`;
+            document.getElementById('n_saques').innerHTML = `Número de saques realizados: ${n_saque}`;
+            valor_deposito_inpt.value = '';
+        }
+        function zerar(){
+            var tirarTd = (cofrinho - cofrinho).toFixed(2);
+            document.getElementById('din_cofrinho_spn').innerHTML = `${tirarTd}`;
+            n_saque++;
+            document.getElementById('n_depositos').innerHTML = `Número de depósitos realizados: ${n_deposito}`;
+            document.getElementById('n_saques').innerHTML = `Número de saques realizados: ${n_saque}`;
+            cofrinho = 0;
+        }
+    </script>
+</html>

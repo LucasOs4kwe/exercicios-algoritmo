@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Ex16 - Lucas Osakwe</title>
+        <style>
+            #tabuada{
+                display: none;
+            }
+            .container{
+                text-align: center;
+                margin-top: 50px;
+            }
+            
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <label for=""><input type="number" id="num_inpt" placeholder="Digite um número"></label>
+            <button type="button" onclick="contas();">Calcular</button>
+            <div id="tabuada">
+                <h1>Tabuada do <span id="numero_spn"></span></h1>
+                <p>
+                    <span id="x1"></span>
+                    <span id="x2"></span>
+                    <span id="x3"></span>
+                    <span id="x4"></span>
+                    <span id="x5"></span>
+                    <span id="x6"></span>
+                    <span id="x7"></span>
+                    <span id="x8"></span>
+                    <span id="x9"></span>
+                    <span id="x10"></span>
+                </p>
+            </div>
+        </div>
+    </body>
+    <script>
+        function contas(){
+            document.getElementById('x1').innerHTML = `${num_inpt.value} x 1 = ${Number(num_inpt.value) * 1} <br>`;
+            document.getElementById('x2').innerHTML = `${num_inpt.value} x 2 = ${Number(num_inpt.value) * 2} <br>`;
+            document.getElementById('x3').innerHTML = `${num_inpt.value} x 3 = ${Number(num_inpt.value) * 3} <br>`;
+            document.getElementById('x4').innerHTML = `${num_inpt.value} x 4 = ${Number(num_inpt.value) * 4} <br>`;
+            document.getElementById('x5').innerHTML = `${num_inpt.value} x 5 = ${Number(num_inpt.value) * 5} <br>`;
+            document.getElementById('x6').innerHTML = `${num_inpt.value} x 6 = ${Number(num_inpt.value) * 6} <br>`;
+            document.getElementById('x7').innerHTML = `${num_inpt.value} x 7 = ${Number(num_inpt.value) * 7} <br>`;
+            document.getElementById('x8').innerHTML = `${num_inpt.value} x 8 = ${Number(num_inpt.value) * 8} <br>`;
+            document.getElementById('x9').innerHTML = `${num_inpt.value} x 9 = ${Number(num_inpt.value) * 9} <br>`;
+            document.getElementById('x10').innerHTML = `${num_inpt.value} x 10 = ${Number(num_inpt.value) * 10}`;
+            document.getElementById('numero_spn').innerHTML = `${num_inpt.value}`;
+            document.getElementById('tabuada').style.display = 'block';
+        }
+    </script>
+</html>

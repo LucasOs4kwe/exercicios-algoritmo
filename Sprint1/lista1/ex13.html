@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Ex11, Ex12 e Ex13 - Lucas Osakwe</title>
+        <style>
+            .game{
+                text-align: center;
+            }
+            .game h1{
+                padding-left: 15px;
+                font-size: 50px;
+            }
+            .buttons button{
+                font-size: 20px;
+                padding: 5px;
+                background-color: #fff;
+                border-radius: 12px;
+                cursor: pointer;
+                margin: 5px;
+            }
+            #real_time{
+                font-size: 20px;
+                font-weight: bold;
+            }
+            #score{
+                font-size: 18px;
+            }
+            #btn-a:hover{
+                background-color: green ;
+                color: yellow;
+            }
+            #btn-b:hover{
+                background-color: rgb(168, 26, 7);
+                color: yellow;
+}
+        </style>
+    </head>
+    <body>
+        <div class="game">
+            <h1>Brasil x Alemanha</h1>
+            <div class="buttons">
+                <button type="button" onclick="a();" id="btn-a">Gol do Brasil</button>
+                <button type="button" onclick="b();" id="btn-b">Gol da Alemanha</button>
+                <div>
+                    <button type="button" onclick="c();">Recomeçar partida</button>
+                </div>
+            </div>
+            <p id="real_time">Tempo real do jogo: </p>
+            <p id="score"></p>
+        </div>
+    </body>
+    <script>
+        function a(){
+            document.getElementById('score').innerHTML += "<span style='color: green';>É goooolll do Brasil!</span> <br><br>";
+        }
+        function b(){
+            document.getElementById('score').innerHTML += "<span style='color: yellow; background-color: rgb(107, 9, 9);'>É goooolll da Alemanha</span><br><br>";
+        }
+        function c(){
+            document.getElementById('score').innerHTML = "";
+        }
+    </script>
+</html>

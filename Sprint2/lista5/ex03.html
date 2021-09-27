@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Ex03 - Lucas Osakwe</title>
+    </head>
+    <body>
+        <div class="container">
+            <div class="content">
+                <input type="text" placeholder="1ª nota" id="nota1">
+                <input type="text" placeholder="2ª nota" id="nota2">
+                <input type="text" placeholder="3ª nota" id="nota3">
+                <button type="button" onclick="calculo();">Analisar desempenho</button>
+                <p id="msg"></p>
+                <p id="msg2"></p>
+            </div>
+        </div>
+    </body>
+    <script>
+        function calculo() {
+            var media = (Number(nota1.value) + Number(nota2.value) + Number(nota3.value)) / 3;
+            document.getElementById('msg').innerHTML = `Sua média foi de ${media.toFixed(1)}, onde ${media.toFixed(1)} é a média calculada.`;
+            if(media > 9.4){
+                document.getElementById('msg2').innerHTML = `Parabéns, você é fora de série!`; 
+            }
+            nota1.value = '';
+            nota2.value = '';
+            nota3.value = '';
+        }
+    </script>
+</html>

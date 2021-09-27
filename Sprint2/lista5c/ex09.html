@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Ex09 - Lucas Osakwe</title>
+    </head>
+    <body>
+        <div class="container">
+            <div class="content">
+                Meta de economia: <input type="text" placeholder="R$" id="meta_inpt">
+                Quanto tem guardado? <input type="text" placeholder="R$" id="cofrinho_inpt">
+                <button type="button" onclick="economia();">Analisar economia</button>
+                <p id="msg"></p>
+            </div>
+        </div>
+    </body>
+    <script>
+        function economia(){
+            var meta = Number(meta_inpt.value);
+            var cofrinho = Number(cofrinho_inpt.value);
+            if(meta == cofrinho){
+                document.getElementById('msg').innerHTML = `Parabéns, meta alcançada!`;
+            }else if(cofrinho > meta){
+                var passouMeta = cofrinho - meta; 
+                document.getElementById('msg').innerHTML = `Meta ultrapassada em R$ ${passouMeta.toFixed(2)}`;
+            }else if(cofrinho < meta){
+                var n_passouMeta = meta - cofrinho;
+                document.getElementById('msg').innerHTML = `Força! Ainda em busca da meta! Faltam R$ ${n_passouMeta.toFixed(2)}`;
+            }
+        }
+    </script>
+</html>

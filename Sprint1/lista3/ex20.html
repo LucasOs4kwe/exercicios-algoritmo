@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Ex20 - Lucas Osakwe</title>
+        <style>
+            table, tr,th, td{
+                border: solid 1px;
+                text-align: center;
+                padding: 2.5px;
+            }
+            .container{
+                display: flex;
+                justify-content: center;
+            }
+            .buttons{
+                text-align: center;
+                margin-top: 10px;
+            }
+            .buttons button{
+                margin-left: 10px;
+            }
+            #msg{
+                text-align: center;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="content">
+                <div class="tabela">
+                    <table>
+                        <tr>
+                            <th>Ingressos</th>
+                            <th>Preço c/ desconto</th>
+                            <th>Valor total c/ desconto</th>
+                            <th>Valor total s/ desconto</th>
+                        </tr>
+                        <tr>
+                            <td>04</td>
+                            <td>R$ 8,00</td>
+                            <td>R$ 32,00</td>
+                            <td>R$ 48,00</td>
+                        </tr>
+                        <tr>
+                            <td>06</td>
+                            <td>R$ 7,00</td>
+                            <td>R$ 42,00</td>
+                            <td>R$ 72,00</td>
+                        </tr>
+                        <tr>
+                            <td>08</td>
+                            <td>R$ 6,00</td>
+                            <td>R$ 48,00</td>
+                            <td>R$ 96,00</td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="buttons">
+                    <button type="button" onclick="IV_ingressos();">04 ingressos</button>
+                    <button type="button" onclick="VI_ingressos();">06 ingressos</button>
+                    <button type="button" onclick="VIII_ingressos();">08 ingressos</button>
+                </div>
+                <p id="msg"></p>
+            </div>
+        </div>
+    </body>
+    <script>
+        function IV_ingressos(){
+            var desconto = (1 - (32 / 48)) * 100;
+            document.getElementById('msg').innerHTML = `Ao comprar 4 ingressos, você pagou ${desconto.toFixed(1)}% a menos.`;
+        }
+        function VI_ingressos(){
+            var desconto = (1 - (42 / 72)) * 100;
+            document.getElementById('msg').innerHTML = `Ao comprar 6 ingressos, você pagou ${desconto.toFixed(1)}% a menos.`;
+        }
+        function VIII_ingressos(){
+            var desconto = (1 - (48 / 96)) * 100;
+            document.getElementById('msg').innerHTML = `Ao comprar 8 ingressos, você pagou ${desconto.toFixed(1)}% a menos.`;
+        }
+    </script>
+</html>

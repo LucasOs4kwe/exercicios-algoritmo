@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Ex06 - Lucas Osakwe</title>
+    </head>
+    <body>
+        <div class="container">
+            <div class="content">
+                <div class="inputs">
+                    <label for=""><input type="text" placeholder="Digite um número" id="num1_inpt"></label>
+                    <label for=""><input type="text" placeholder="Digite outro número" id="num2_inpt"></label>
+                </div>
+                <div class="buttons">
+                    <button type="button" onclick="conta();">Calcular Raiz</button>
+                </div>
+                <p id="resultado"></p>
+            </div>
+        </div>
+    </body>
+    <script>
+        function conta() {
+            var conta = Number(num1_inpt.value) ** (1/Number(num2_inpt.value));
+            document.getElementById('resultado').innerHTML = `a ${num2_inpt.value}ª raiz de ${num1_inpt.value} dá ${conta}`;
+        }
+    </script>
+</html>

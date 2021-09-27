@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Ex04 - Lucas Osakwe</title>
+    </head>
+    <body>
+        <h1>Calculadora de média</h1>
+        <label for="">Primeira nota:<input type="text" id="primeira"></label>
+        <label for="">Segunda nota:<input type="text" id="segunda"></label>
+        <button type="button" onclick="media();">Calcular</button>
+        <h2 id="media"></h2>
+    </body>
+    <script>
+        function media(){
+            document.getElementById('media').innerHTML = `Sua média é de ${((Number(primeira.value) + Number(segunda.value))/2)}`
+        }
+    </script>
+</html>

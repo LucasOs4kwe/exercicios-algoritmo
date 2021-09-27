@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Ex08 - Lucas Osakwe</title>
+    </head>
+    <body>
+        <div class="container">
+            <div class="content">
+                <input type="text" placeholder="Nº Homens" id="n_homens">
+                <input type="text" placeholder="Nº Mulheres" id="n_mulheres">
+                <button type="button" onclick="peso_elevador();">Ligar elevador</button>
+                <p id="msg"></p>
+            </div>
+        </div>
+    </body>
+    <script>
+        function peso_elevador(){
+            var homem = 90;
+            var mulher = 70;
+            var total = (Number(n_homens.value) * 90) + (Number(n_mulheres.value) * 70);
+            var dif = total - 500;
+            if(total < 500){
+                document.getElementById("msg").innerHTML = `O elevador vai se mover, pois está com ${total.toFixed(2)}kg`;
+                document.getElementById("msg").style.color = "green";
+            }else{
+                document.getElementById("msg").innerHTML = `Alguém precisa descer. Precisa perder ${dif.toFixed(2)}kg para mover o elevador`;
+                document.getElementById("msg").style.color = "red";
+            }
+            n_homens.value = '';
+            n_mulheres.value = '';
+        }
+    </script>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Ex08 - Lucas Osakwe</title>
+    </head>
+    <body>
+        <div class="container">
+            <div class="content">
+                Quantidade de homens no elevador: <input type="text" id="homens_elev">
+                Quantidade de mulheres no elevador: <input type="text" id="mulheres_elev">
+                <button type="button" onclick="peso_elevador();">Analisar peso</button>
+                <p id="msg"></p>
+                <p id="msg2"></p>
+            </div>
+        </div>
+    </body>
+    <script>
+        function peso_elevador(){
+            var homem = Number(homens_elev.value) * 80;
+            var mulher = Number(mulheres_elev.value) * 60;
+            var soma = homem + mulher;
+            document.getElementById('msg').innerHTML = `Este elevador suporta 800kg e o peso estimado desta lotação é de ${soma}kg`;
+            if(soma > 800){
+                document.getElementById('msg').innerHTML = `Este elevador suporta 800kg e o peso estimado desta lotação é de ${soma}kg`;
+                document.getElementById('msg2').innerHTML = `Será necessário descer alguém para que o elevador se movimente.`;
+                document.getElementById('msg2').style.color = 'blue';
+            }
+            homens_elev.value = '';
+            mulheres_elev.value = '';
+        }
+    </script>
+</html>

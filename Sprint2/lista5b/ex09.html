@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Ex09 - Lucas Osakwe</title>
+        <style>
+            .container{
+                margin: 30px;
+                display: flex;
+                justify-content: center;
+            }
+            .content{
+                text-align: center;
+                box-shadow: 0px 0px 5px 0px;
+                padding: 20px;
+                border-radius: 12px;
+                width: fit-content;
+            }
+            #hidden_oviparo,#hidden_mamifero,#hidden_form{
+                display: none;
+            }
+            #img img{
+                width: 350px;
+                border-radius: 12px;
+            }
+            .combo-box{
+                margin-bottom: 3.5px;
+                border-radius: 12px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="content">
+                <select name="" id="choice_item" onchange="choice();" class="combo-box">
+                    <option value="" selected>- Escolha um item - </option>
+                    <option value="1">Ovíparos</option>
+                    <option value="2">Mamíferos</option>
+                </select>
+
+                <div id="hidden_oviparo">
+                    <select name="" id="choice_oviparo" onchange="oviparo();" class="combo-box">
+                        <option value="" selected>- Escolha um ovíparo -</option>
+                        <option value="galinha">Galinha</option>
+                        <option value="peixe">Peixe</option>
+                        <option value="tartaruga">Tartaruga</option>
+                    </select>
+                </div>
+                <div id="hidden_mamifero">
+                    <select name="" id="choice_mamifero" onchange="mamifero();" class="combo-box">
+                        <option value="" selected>- Escolha um mamífero -</option>
+                        <option value="elefante">Elefante</option>
+                        <option value="porco">Porco</option>
+                        <option value="coelho">Coelho</option>
+                        
+                    </select>
+                </div>
+
+                <div id="img"></div>
+                <div id="hidden_form">
+                    <label for="">Valor de compra do animal: <input type="text" placeholder="R$" id="imposto_inpt"></label>
+                    <button type="button" onclick="imposto();">Calcular imposto</button>
+                    <p id="msg"></p>
+                </div>
+            </div>
+        </div>
+    </body>
+    <script>
+        function choice(){
+            if(choice_item.value == 1){
+                document.getElementById('hidden_oviparo').style.display = "block";
+                document.getElementById('hidden_mamifero').style.display = "none";
+            }else if(choice_item.value == 2){
+                document.getElementById('hidden_mamifero').style.display = "block";
+                document.getElementById('hidden_oviparo').style.display = "none";
+            }else{
+                document.getElementById('hidden_mamifero').style.display = "none";
+                document.getElementById('hidden_oviparo').style.display = "none";
+            }
+            document.getElementById('hidden_form').style.display = "none";
+            document.getElementById('img').innerHTML = '';
+            document.getElementById('msg').innerHTML = '';
+        }
+        function oviparo(){
+            if(choice_oviparo.value == "galinha"){
+                document.getElementById('img').innerHTML = `<img src="https://aventurasnahistoria.uol.com.br/media/_versions/galinharicajjajjda_widexl.jpg" alt="">`;
+                document.getElementById('hidden_form').style.display = "block";
+            }else if(choice_oviparo.value == "peixe"){
+                document.getElementById('img').innerHTML = `<img src="https://s2.static.brasilescola.uol.com.br/be/2020/12/peixe.jpg" alt="">`;
+                document.getElementById('hidden_form').style.display = "block";
+            }else if(choice_oviparo.value == "tartaruga"){
+                document.getElementById('img').innerHTML = `<img src="https://cdn.diferenca.com/imagens/tartaruga-cagado-e-jabuti-og.jpg" alt="">`;
+                document.getElementById('hidden_form').style.display = "block";
+            }else{
+                document.getElementById('img').innerHTML = '';
+                document.getElementById('hidden_form').style.display = "none";
+            }
+            document.getElementById('msg').innerHTML = '';
+        }
+        function mamifero(){
+            if(choice_mamifero.value == "elefante"){
+                document.getElementById('img').innerHTML = `<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/37/African_Bush_Elephant.jpg/1200px-African_Bush_Elephant.jpg" alt="">`;
+                document.getElementById('hidden_form').style.display = "block";
+            }else if(choice_mamifero.value == "porco"){
+                document.getElementById('img').innerHTML = `<img src="https://super.abril.com.br/wp-content/uploads/2021/05/porquinho_site.jpg?quality=70&strip=info&w=680&h=453&crop=1" alt="">`;
+                document.getElementById('hidden_form').style.display = "block";
+            }else if(choice_mamifero.value == "coelho"){
+                document.getElementById('img').innerHTML = `<img src="https://www.dicaspetz.com.br/wp-content/uploads/2021/02/com-quantos-dias-os-filhotes-de-coelhos-comecam-a-comer-roedores.jpg" alt="">`;
+                document.getElementById('hidden_form').style.display = "block";
+            }else{
+                document.getElementById('img').innerHTML = '';
+                document.getElementById('hidden_form').style.display = "none";
+            }
+            document.getElementById('msg').innerHTML = '';
+        }
+        function imposto(){
+            if(choice_item.value == 1){
+                var total = Number(imposto_inpt.value) * 0.05;
+                document.getElementById('msg').innerHTML = `O imposto será de R$ ${total.toFixed(2)}`;
+            }else if(choice_item.value == 2){
+                var total = imposto_inpt.value * 0.1;
+                document.getElementById('msg').innerHTML = `O imposto será de R$ ${total.toFixed(2)}`;
+            }
+            imposto_inpt.value = '';
+        }
+    </script>
+</html>

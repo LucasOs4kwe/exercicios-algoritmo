@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Ex11 - Lucas Osakwe</title>
+    </head>
+    <body>
+        <div class="container">
+            <div class="content">
+                Quantos filhos você tem? <input type="text" id="nmr_filhos">
+                <button type="button" onclick="familia();">Analisar família</button>
+                <p id="msg"></p>
+                <p id="msg2"></p>
+                <p id="msg3"></p>
+                <p id="msg4"></p>
+            </div>
+        </div>
+    </body>
+    <script>
+        function familia(){
+            var filhos = Number(nmr_filhos.value);
+            if(filhos >= 1){
+                document.getElementById('msg').innerHTML = `Não tem TV`;
+                document.getElementById('msg2').innerHTML = ``;
+                document.getElementById('msg3').innerHTML = ``;
+                document.getElementById('msg4').innerHTML = ``;
+            }
+            if(filhos >= 2){
+                document.getElementById('msg').innerHTML = `Não tem TV`;
+                document.getElementById('msg2').innerHTML = `Não tem internet`;
+                document.getElementById('msg3').innerHTML = ``;
+                document.getElementById('msg4').innerHTML = ``;
+            }
+            if(filhos >= 3){
+                document.getElementById('msg').innerHTML = `Não tem TV`;
+                document.getElementById('msg2').innerHTML = `Não tem internet`;
+                document.getElementById('msg3').innerHTML = `Não tem video game`;
+                document.getElementById('msg4').innerHTML = ``;
+            }
+            if(filhos >= 4){
+                document.getElementById('msg').innerHTML = `Não tem TV`;
+                document.getElementById('msg2').innerHTML = `Não tem internet`;
+                document.getElementById('msg3').innerHTML = `Não tem video game`;
+                document.getElementById('msg4').innerHTML = `Não tem Netflix`;
+            }
+            nmr_filhos.value = '';
+        }
+    </script>
+</html>

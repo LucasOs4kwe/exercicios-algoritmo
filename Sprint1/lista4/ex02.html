@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Ex02 - Lucas Osakwe</title>
+    </head>
+    <body>
+        <div class="container">
+            <div class="content">
+                <select id="atracao_slct">
+                    <option value="" selected>-Atrações-</option>
+                    <option value="Assistir a filme 'Marley & Eu''">Cinema</option>
+                    <option value="Assistir a peça 'O Fantasma da Ópera'">Teatro</option>
+                    <option value="Ir ao 'Hopi Hari'">Parque</option>
+                    <option value="Ouvir o show da 'Lady Gaga'">Show</option>
+                </select>
+                <button type="button" onclick="atracao();">Ver atração</button>
+            </div>
+        </div>
+    </body>
+    <script>
+        function atracao() {
+            alert(`${atracao_slct.value}`);
+        }
+    </script>
+</html>

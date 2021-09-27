@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Ex05 - Lucas Osakwe</title>
+    </head>
+    <body>
+        <div class="contain">
+            <div class="content">
+                <h1>Classificação de um aluno</h1>
+                Digite a nota: <input type="text" id="nota_inpt">
+                <button type="button" onclick="notaAluno();">Ver</button>
+            </div>
+        </div>
+    </body>
+    <script>
+        function notaAluno(){
+            var nota = Number(nota_inpt.value);
+            if(nota < 5){
+                alert("Aluno precisa de muita ajuda");
+            }else if(nota < 7){
+                alert("Aluno na média");
+            }else if(nota < 9.5){
+                alert("Aluno acima da média");
+            }else{
+                alert("Aluno fora da curva");
+            }
+        }
+    </script>
+</html>

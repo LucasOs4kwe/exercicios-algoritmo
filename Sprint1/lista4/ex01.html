@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Ex01 - Lucas Osakwe</title>
+    </head>
+    <body>
+        <div class="container">
+            <div class="content">
+                <select id="produtos_slct">
+                    <option value="" selected disabled>-Itens-</option>
+                    <option value="5">Leite</option>
+                    <option value="3.4">Farinha</option>
+                    <option value="12">Ovos</option>
+                    <option value="7.5">Pão</option>
+                </select>
+                <button type="button" onclick="preco();">Ver preço</button>
+            </div>
+        </div>
+    </body>
+    <script>
+        function preco(){
+            alert(`Isso custa R$ ${Number(produtos_slct.value).toFixed(2)}`);
+        }
+    </script>
+</html>

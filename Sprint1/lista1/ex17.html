@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Ex17 - Lucas Osakwe</title>
+        <style>
+            #hidden{
+                display: none;
+            }
+            #hidden img{
+                width: 300px;
+                margin: 30px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="buttons">
+            <button type="button" onclick="chegou();">Acabou de chegar</button>
+            <button type="button" onclick="depois1();">Depois de 1 minuto</button>
+            <button type="button" onclick="depois2();">Depois de 5 minutos</button>
+            <button type="button" onclick="depois3();">Depois de 15 minutos</button>
+        </div>
+        <div id="hidden"><img src="" alt="" id="pizza"></div>
+        
+    </body>
+    <script>
+        function chegou(){
+            document.getElementById('hidden').style.display = "block";
+            document.getElementById('hidden').innerHTML = "<img src='Imagens/pizza_inteira.jpg'>"
+        }
+        function depois1(){
+            document.getElementById('hidden').style.display = "block";
+            document.getElementById('hidden').innerHTML = "<img src='Imagens/pizza2.jpg'>"
+        }
+        function depois2(){
+            document.getElementById('hidden').style.display = "block";
+            document.getElementById('hidden').innerHTML = "<img src='Imagens/pizza_metade.jpg'>"
+        }
+        function depois3(){
+            document.getElementById('hidden').style.display = "block";
+            document.getElementById('hidden').innerHTML = "<img src='Imagens/restos_pizza.jpg'>"
+        }
+    </script>
+</html>

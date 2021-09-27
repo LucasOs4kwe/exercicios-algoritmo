@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Ex16 - Lucas Osakwe</title>
+    </head>
+    <body>
+        <div class="container">
+            <div class="content">
+                Tamanho do lado do quadrado: <input type="text" placeholder="cm" id="lado_quadrado">
+                <button type="button" onclick="calculo();">Calcular área</button>
+                <p id="msg"></p>
+            </div>
+        </div>
+    </body>
+    <script>
+        function calculo() {
+            var area = Number(lado_quadrado.value) ** 2;
+            document.getElementById('msg').innerHTML = `A área desse quadrado é igual a ${area.toFixed(1)} cm`; 
+        }
+    </script>
+</html>

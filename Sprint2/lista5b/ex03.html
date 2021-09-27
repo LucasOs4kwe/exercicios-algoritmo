@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Ex03 - Lucas Osakwe</title>
+    </head>
+    <body>
+        <div class="container">
+            <div class="content">
+                <h1>Mercado BOM DOCE</h1>
+                Chocolates <input type="number" id="num_choco">
+                <button type="button" onclick="compra();">Comprar</button>
+                <p id="msg"></p>
+            </div>
+        </div>
+    </body>
+    <script>
+        function compra(){
+            var choco = 3;
+            if(num_choco.value > 12){
+                choco = 2.5;
+                var total = Number(num_choco.value) * choco;
+                document.getElementById('msg').innerHTML = `O valor total da sua compra foi de R$ ${total.toFixed(2)}`;
+            } 
+            else{
+                var total = Number(num_choco.value) * choco;
+                document.getElementById('msg').innerHTML = `O valor total da sua compra foi de R$ ${total.toFixed(2)}`;
+            }
+        }
+    </script>
+</html>

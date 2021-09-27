@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Ex 02 - Lucas Osakwe</title>
+    </head>
+    <body>
+        <div class="container">
+            <div class="content">
+                <label for="">Digite o raio da circunferência: <input type="text" id="raio_inpt"></label>
+                <div class="butto">
+                    <button onclick="area();">Calcular área</button>
+                </div>
+                <p id="calculo"></p>
+            </div>
+        </div>
+    </body>
+    <script>
+        function area(){
+            var area = 3.14 * Number(raio_inpt.value)**2;
+            document.getElementById('calculo').innerHTML = `Área = ${area.toFixed(2)}`
+        }
+    </script>
+</html>

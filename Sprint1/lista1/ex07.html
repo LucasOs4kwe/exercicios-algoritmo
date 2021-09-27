@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Ex07 e Ex08 - Lucas Osakwe</title>
+        <style>
+            #welcome{
+                background-color: black;
+                color: yellow;
+            }
+        </style>
+    </head>
+    <body>
+        <button type="button" onclick="alert_msg();">Boas vindas no alerta</button>
+        <button type="button" onclick="page();">Boas vindas na página</button>
+        <p id="welcome"></p>
+    </body>
+    <script>
+        function alert_msg(){
+            alert("Seja bem vindo(a)!");
+        }
+        function page(){
+            document.getElementById('welcome').innerHTML = 'Seja bem vindo(a)!';
+        }
+    </script>
+</html>

@@ -1,0 +1,61 @@
+body{
+    margin: 0;
+    padding: 0;
+    background-image: url('./img/safe_image-1.jpg');
+}
+a{
+    text-decoration: none;
+}
+ul{
+    list-style: none;
+}
+.container{
+    margin: 10px 10px 10px 10px;
+}
+.box img{
+
+}
+.content{
+    display: flex;
+    justify-content: center;
+    margin-top: 10%;
+}
+.box{
+    width: 500px;
+    height: 500px;
+    background-color:transparent;
+    border-radius: 12px;
+    box-shadow: 0 0 1em rgb(182, 180, 180);
+    display: flex;
+    justify-content: center;
+}
+.form-group input{
+    display: block;
+    margin-top: 20px;
+    padding: 10px;
+    border-radius: 12px;
+    border: 1px solid;
+    text-align: center;
+}
+.form-group{
+    margin-top: 20%;
+}
+
+.img{
+    margin: 10px;
+    display: inline-block;
+    align-items: center;
+    text-align: center;
+}
+.img img{
+    width: 500px;
+}
+.img button{
+    font-size: 20px;
+    padding: 10px;
+    border-radius: 5px;
+}
+.img button:hover{
+    color: rgb(8, 89, 211);
+    
+}

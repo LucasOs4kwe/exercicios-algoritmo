@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Ex09 e Ex10 - Lucas Osakwe</title>
+        <style>
+            .buttons{
+                text-align: center;
+                margin: 30px;
+            }
+            .buttons button{
+                margin: 5px;
+                font-size: 20px;
+            }
+            #msg{
+                width: 200px;
+                text-align: center;
+                font-size: 18px;
+            }
+            .msgP{
+                display: flex;
+                justify-content: center;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="buttons">
+            <button type="button" onclick="pare();">Pare</button>
+            <button type="button" onclick="pense();">Pense</button>
+            <button type="button" onclick="siga();">Siga</button>
+        </div>
+        <div class="msgP">
+            <p id="msg"></p>
+        </div>
+    </body>
+    <script>
+        function pare(){
+            document.getElementById('msg').innerHTML = 'Pare e aguarde!'
+            document.getElementById('msg').style.color= "white";
+            document.getElementById('msg').style.backgroundColor = "red";
+        }
+        function pense(){
+            document.getElementById('msg').innerHTML = 'Pense se pode seguir ou se deve parar!';
+            document.getElementById('msg').style.color= "yellow";
+            document.getElementById('msg').style.backgroundColor = "black";
+        }
+        function siga(){
+            document.getElementById('msg').innerHTML = 'Pode seguir adiante =)';
+            document.getElementById('msg').style.color= "green";
+            document.getElementById('msg').style.backgroundColor = "white";
+        }
+    </script>
+</html>

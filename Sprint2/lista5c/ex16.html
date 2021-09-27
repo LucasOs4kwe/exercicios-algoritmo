@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Ex16 - Lucas Osakwe</title>
+    </head>
+    <body>
+        <div class="container">
+            <div class="content">
+                <h1>Você sabia?</h1>
+                Digite um ano: <input type="text" id="ano_inpt">
+                <button type="button" onclick="fatos();">Ver fato</button>
+                <p id="msg"></p>
+            </div>
+        </div>
+    </body>
+    <script>
+        function fatos(){
+            var ano = Number(ano_inpt.value);
+            if(ano < 1965){
+                document.getElementById('msg').innerHTML = `No ano ${ano} o email nem havia sido criado ainda...`;
+            }else if(ano == 1965){
+                document.getElementById('msg').innerHTML = `No ano ${ano} o email estava sendo criado...`;
+            }else if(ano < 1969){
+                document.getElementById('msg').innerHTML = `No ano ${ano} o email já havia sido criado...`;
+            }else{
+                document.getElementById('msg').innerHTML = `No ano ${ano} o email já havia sido aprimorado - Poderia ser enviado para outro computador ...`;
+            }
+            ano_inpt.value = '';
+        }
+    </script>
+</html>

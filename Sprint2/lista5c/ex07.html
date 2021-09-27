@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Ex07 - Lucas Osakwe</title>
+    </head>
+    <body>
+        <div class="container">
+            <div class="content">
+                Digite o valor que tem economizado: <input type="text" placeholder="R$" id="valor_inpt">
+                <button type="button" onclick="">Poder de compra</button>
+                <p id="msg"></p>
+                <p id="msg2"></p>
+                <p id="msg3"></p>
+            </div>
+        </div>
+    </body>
+    <script>
+        function poderCompra(){
+            var valor = Number(valor_inpt.value);
+            if(valor <= 0){
+                document.getElementById('msg').innerHTML = `Nada de compras :(`;
+            }else if(valor < 100){
+                document.getElementById('msg').innerHTML = `Viajem de ida e volta para praia grande`;
+            }else if(valor < 4000){
+                document.getElementById('msg').innerHTML = `Viajem de ida e volta para praia grande`;
+                document.getElementById('msg').innerHTML = `Uma boa moto usada`;
+            }else{
+                document.getElementById('msg').innerHTML = `Viajem de ida e volta para praia grande`;
+                document.getElementById('msg2').innerHTML = `Uma boa moto usada`;
+                document.getElementById('msg3').innerHTML = `Mais alguma bobagem legal`;
+            }
+        }
+    </script>
+</html>

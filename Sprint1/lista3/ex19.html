@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Ex19 - Lucas Osakwe</title>
+    </head>
+    <body>
+        <div class="container">
+            <div class="content">
+                Quantos meses a obra levará? <input type="text" id="meses_inpt">
+                <div class="buttons">
+                    <button type="button" onclick="semanal();">Ver projeção semanal</button>
+                    <p id="msg1"></p>
+                    <button type="button" onclick="mensal();">Ver projeção mensal</button>
+                    <p id="msg2"></p>
+                    <button type="button" onclick="total();">Ver projeção total</button>
+                    <p id="msg3"></p>
+                </div>
+            </div>
+        </div>
+    </body>
+    <script>
+        function semanal(){
+            var obra = 380;
+            obra *= 7;
+            document.getElementById('msg1').innerHTML = `Valor da obra em uma semana: R$ ${obra.toFixed(2)}`;
+        }
+        function mensal(){
+            var obra = 380;
+            obra *= 30;
+            document.getElementById('msg2').innerHTML = `Valor da obra em um mês: R$ ${obra.toFixed(2)}`;
+        }
+        function total(){
+            var obra = 380;
+            obra *= Number(meses_inpt.value) * 30;
+            document.getElementById('msg3').innerHTML = `O valor total da obra é de: R$ ${obra.toFixed(2)}`;
+        }
+      
+    </script>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Ex06 - Lucas Osakwe</title>
+        <style>
+            #msg2{
+                color: red;
+                font-weight: bold;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="content">
+                Valor da renda familiar: <input type="text" placeholder="R$" id="renda_familiar">
+                Valor da prestação: <input type="text" placeholder="R$" id="valor_prestacao">
+                <button type="button" onclick="financiamento();">Verificar financiamento</button>
+                <p id="msg"></p>
+                <p id="msg2"></p>
+            </div>
+        </div>
+    </body>
+    <script>
+        function financiamento(){
+            var calculo = (Number(valor_prestacao.value) / Number(renda_familiar.value)) * 100;
+            document.getElementById('msg').innerHTML = `A prestação corresponde a ${calculo.toFixed(1)}% da renda familiar`;
+            if(calculo > 30){
+                document.getElementById('msg2').innerHTML = `Será necessário complementar a renda familiar.`;
+            }
+            renda_familiar.value = '';
+            valor_prestacao.value = '';
+        }
+    </script>
+</html>

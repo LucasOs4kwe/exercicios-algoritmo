@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Ex07 - Lucas Osakwe</title>
+        <style>
+            #termo_inpt{
+                position: relative;
+                bottom: 5px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="content">
+                <h1>Progressão geométrica</h1>
+                <h2>t1 * r(n - 1)</h2>
+                <input type="text" placeholder="1º número da progressão" id="primeiroNUM_inpt"> *
+                <input type="text" placeholder="Razão" id="razao_inpt"> ** (<input type="text" placeholder="Termo" id="termo_inpt">)
+                <button type="button" onclick="pg();">Calcular PG</button>
+                <p id="resultado"></p>
+            </div>
+        </div>
+    </body>
+    <script>
+        function pg(){
+            var calculoPG = Number(primeiroNUM_inpt.value) * Number(razao_inpt.value) ** (Number(termo_inpt.value) - 1);
+            document.getElementById('resultado').innerHTML = `O ${termo_inpt.value}º termo dessa PG será ${calculoPG}`;
+        }
+    </script>
+</html>

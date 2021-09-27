@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ptbr">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Ex01 - Lucas Osakwe</title>
+    </head>
+    <body>
+        <div class="container">
+            <div class="content">
+                <input type="text" placeholder="Digite seu nome" id="inpt_nome"> 
+                <input type="text" placeholder="Digite sua idade" id="inpt_idade">
+                <button type="button" onclick="validar();">Avaliar aluno</button>
+                <p id="msg"></p>
+            </div>
+        </div>
+    </body>
+    <script>
+        function validar(){
+            var nome = inpt_nome.value;
+            var idade = Number(inpt_idade.value);
+            if(idade >= 18){
+                document.getElementById('msg').innerHTML = `${inpt_nome.value}, vamos tirar a CNH?`;
+            }
+            else{
+                document.getElementById('msg').innerHTML = `${inpt_nome.value}, vai jogar playstation!!`;
+            }
+            inpt_nome.value = '';
+            inpt_idade.value = '';
+        }
+    </script>
+</html>

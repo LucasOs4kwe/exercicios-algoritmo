@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Ex18 - Lucas Osakwe</title>
+        <style>
+            #img img{
+                width: 300px;
+                border-radius: 10px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="content">
+                <h1>Vida do lutador: <span id="vida_spn">1000</span></h1>
+                <div id="img">
+                    <img src="https://www.superlutas.com.br/wp-content/uploads/2020/10/anderson-silva.jpg" alt="">
+                </div>
+                <button type="button" onclick="apanhar();">Apanhar</button>
+                <button type="button" onclick="vidaA();">Concentrar força</button>
+                <p id="msg"></p>
+            </div>
+        </div>
+    </body>
+    <script>
+        var vida = 1000;
+        function apanhar(){
+            vida -= 100;
+            document.getElementById('vida_spn').innerHTML = `${vida.toFixed(0)}`;
+            if(vida <= 0){
+                document.getElementById('msg').innerHTML = `Lutador já era!`;
+                vida = 0;
+                document.getElementById('vida_spn').innerHTML = `${vida.toFixed(0)}`;
+                document.getElementById('img').innerHTML = `<img src="https://www.br104.com.br/wp-content/uploads/2019/05/cats-1.jpg">`;
+            }
+            else if(vida < 1000){
+                document.getElementById('msg').innerHTML = `O lutador ainda está vivo!`;
+            }
+        }
+        function vidaA(){
+            vida *= 1.05;
+            document.getElementById('vida_spn').innerHTML = `${vida.toFixed(0)}`;
+            if(vida <= 0){
+                vida = 0;
+            }
+        }
+    </script>
+</html>

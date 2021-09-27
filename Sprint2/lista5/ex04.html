@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Ex04 - Lucas Osakwe</title>
+    </head>
+    <body>
+        <div class="container">
+            <div class="content">
+                Valor da pizza: <input type="text" placeholder="R$" id="valor_pizza">
+                Quantas pessoas? <input type="text" id="qtd_pessoas">
+                <button type="button" onclick="pizza();">Rola Pizza?</button>
+                <p id="msg"></p>
+                <p id="msg2"></p>
+            </div>
+        </div>
+    </body>
+    <script>
+        function pizza(){
+            var pizzaDiv = Number(valor_pizza.value) / Number(qtd_pessoas.value);
+            document.getElementById('msg').innerHTML = `Cada amigo vai pagar R$ ${pizzaDiv.toFixed(2)} pela pizza.`;
+            if(pizzaDiv > 20){
+                document.getElementById('msg2').innerHTML = `Deu ruim! Pizza muito cara!`;
+            }
+            valor_pizza.value = '';
+            qtd_pessoas.value = '';
+        }
+    </script>
+</html>

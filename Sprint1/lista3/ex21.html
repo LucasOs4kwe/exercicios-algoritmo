@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Ex21 - Lucas Osakwe</title>
+    </head>
+    <body>
+        <div class="container">
+            <div class="content">
+                <h1>Time A - <span id="timeA_spn">0</span>:<span id="timeB_spn">0</span> - Time B</h1>
+                <div class="timeA">
+                    <input type="text" placeholder="Pontos time A" id="timeA_inpt">
+                    <button type="button" onclick="pontosA();">A</button>
+                </div>
+
+                <div class="timeB">
+                    <input type="text" placeholder="Pontos time B" id="timeB_inpt">
+                    <button type="button" onclick="pontosB();">B</button>
+                </div>
+            </div>
+        </div>
+    </body>
+    <script>
+        var timeA = 0;
+        var timeB = 0;
+        function pontosA(){
+            var inpt = Number(timeA_inpt.value);
+            var contagem = timeA + inpt;
+            timeA = contagem
+            document.getElementById('timeA_spn').innerHTML = `${contagem}`;
+            timeA_inpt.value = '';
+            timeB_inpt.value = '';
+        }
+        function pontosB(){
+            var inpt = Number(timeB_inpt.value);
+            var contagem = timeB + inpt;
+            timeB = contagem
+            document.getElementById('timeB_spn').innerHTML = `${contagem}`;
+            timeA_inpt.value = '';
+            timeB_inpt.value = '';
+        }
+    </script>
+</html>

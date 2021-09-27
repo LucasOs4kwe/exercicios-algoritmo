@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Ex15 - Lucas Osakwe</title>
+        <style>
+            #img img{
+                width: 400px;
+                height: 350px;
+                border-radius: 12px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="content">
+                Partidas jogadas: <input type="text" id="qntJogos_inpt">
+                Quantidade de gols marcados: <input type="text" id="qntGols_inpt">
+                <button type="button" onclick="atacante();">Estudar atacante</button>
+                <p id="msg"></p>
+                <div id="img"></div>
+            </div>
+        </div>
+    </body>
+    <script>
+        function atacante() {
+            var media = Number(qntGols_inpt.value) / Number(qntJogos_inpt.value);
+            if(media < 0.2){
+                document.getElementById('msg').innerHTML = `Melhor mudar de posição<br>Média de gols: ${media.toFixed(1)}`;
+                document.getElementById('img').innerHTML = `<img src="https://i.superesportes.com.br/uYm4MoRopfjRJZ9nqR5zUbGcAQY=/750x0/smart/imgsapp.mg.superesportes.com.br/app/noticia_126420360808/2021/03/04/3905387/20210304114757270774e.jpg" alt="Jogador_ruim">`;
+            }else if(media < 0.6){
+                document.getElementById('msg').innerHTML = `Atacante mediano<br>Média de gols: ${media.toFixed(1)}`;
+                document.getElementById('img').innerHTML = `<img src="https://lh3.googleusercontent.com/proxy/Q1ywFi2d_CSZZb4qFZiS_UmYb-8n9KQKx3GeznDbIc1C2N2sJgP7XDokNZIti6n9wvFw9hjFsNOV-vdzEQ45U_iV0nAZ1-U1icxh8rqeW7KulOqa" alt="Jogador_comum">`;
+            }else if(media > 0.6){
+                document.getElementById('msg').innerHTML = `Atacante de futuro<br>Média de gols: ${media.toFixed(1)}`;
+                document.getElementById('img').innerHTML = `<img src="https://pbs.twimg.com/profile_images/1432346360649592833/qUf8lxQM.jpg" alt="Jogador_promissor">`;
+            }else{}
+            qntJogos_inpt.value = '';
+            qntGols_inpt.value = '';
+        }
+    </script>
+</html>

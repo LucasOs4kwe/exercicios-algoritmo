@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Ex05 - Lucas Osakwe</title>
+    </head>
+    <body>
+        <div class="container">
+            <div class="content">
+                <select name="" id="lista_tabuada" onchange="tabuada();">
+                    <option value="" selected disabled>Selecione um número</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                </select>
+                <div id="tabuada_div"></div>
+                <div id="tabuada_div2"></div>
+                <div id="tabuada_div3"></div>
+                <div id="tabuada_div4"></div>
+                <div id="tabuada_div5"></div>
+                <div id="tabuada_div6"></div>
+                <div id="tabuada_div7"></div>
+                <div id="tabuada_div8"></div>
+                <div id="tabuada_div9"></div>
+                <div id="tabuada_div10"></div>
+            </div>
+        </div>
+    </body>
+    <script>
+        function tabuada(){
+            document.getElementById('tabuada_div').innerHTML = `${Number(lista_tabuada.value)} x 1 = ${Number(lista_tabuada.value) * 1}`;
+            document.getElementById('tabuada_div2').innerHTML = `${Number(lista_tabuada.value)} x 2 = ${Number(lista_tabuada.value) * 2}`;
+            document.getElementById('tabuada_div3').innerHTML = `${Number(lista_tabuada.value)} x 3 = ${Number(lista_tabuada.value) * 3}`;
+            document.getElementById('tabuada_div4').innerHTML = `${Number(lista_tabuada.value)} x 4 = ${Number(lista_tabuada.value) * 4}`;
+            document.getElementById('tabuada_div5').innerHTML = `${Number(lista_tabuada.value)} x 5 = ${Number(lista_tabuada.value) * 5}`;
+            document.getElementById('tabuada_div6').innerHTML = `${Number(lista_tabuada.value)} x 6 = ${Number(lista_tabuada.value) * 6}`;
+            document.getElementById('tabuada_div7').innerHTML = `${Number(lista_tabuada.value)} x 7 = ${Number(lista_tabuada.value) * 7}`;
+            document.getElementById('tabuada_div8').innerHTML = `${Number(lista_tabuada.value)} x 8 = ${Number(lista_tabuada.value) * 8}`;
+            document.getElementById('tabuada_div9').innerHTML = `${Number(lista_tabuada.value)} x 9 = ${Number(lista_tabuada.value) * 9}`;
+            document.getElementById('tabuada_div10').innerHTML = `${Number(lista_tabuada.value)} x 10 = ${Number(lista_tabuada.value) * 10}`;
+        }
+    </script>
+</html>

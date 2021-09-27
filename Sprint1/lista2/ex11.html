@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Ex11 e Ex12 - Lucas Osakwe</title>
+        <style>
+            .container {
+                text-align: center;
+                margin: 60px 0 0 0;
+            }
+            .container label input{
+                width: 100px;
+            }
+            .container .buttons button {
+                font-size: 15px;
+                padding: 10px;
+                border-radius: 5px;
+                background-color: white;
+                cursor: pointer;
+            }
+            .container .buttons button:hover{
+                color: white;
+                background-color: black;
+            }
+        </style>
+    </head>
+    <body>
+       <div class="container">
+           <label for=""><input type="number" placeholder="ki base" id="ki_number"></label>
+           <p><b>Transformar em...</b></p>
+           <div class="buttons">
+                <button type="button" onclick="ssj();">SSJ</button>
+                <button type="button" onclick="ssj2();">SSJ2</button>
+                <button type="button" onclick="ssj3();">SSJ3</button>
+           </div>
+           <p id="msg"></p>
+           <div id="sayajin">
+                <img src="" alt="">
+           </div>
+       </div> 
+    </body>
+    <script>
+        function ssj(){
+            var ssj = Number(ki_number.value * 50);
+            document.getElementById("msg").innerHTML = `Após se transformar em SSJ, o ki desse Sayajin passa a ser de ${ssj}`;
+            document.getElementById("sayajin").innerHTML = "<img src='../Imagens/SSJ.png'>";
+        }
+        function ssj2(){
+            var ssj2 = Number(ki_number.value * 100);
+            document.getElementById("msg").innerHTML = `Após se transformar em SSJ2, o ki desse Sayajin passa a ser de ${ssj2}`;
+            document.getElementById("sayajin").innerHTML = "<img src='../Imagens/SSJ2.png'>";
+        }
+        function ssj3(){
+            var ssj3 = Number(ki_number.value * 200);
+            document.getElementById("msg").innerHTML = `Após se transformar em SSJ3, o ki desse Sayajin passa a ser de ${ssj3}`;
+            document.getElementById("sayajin").innerHTML = "<img src='../Imagens/SSJ3.png'>";
+        }
+    </script>
+</html>

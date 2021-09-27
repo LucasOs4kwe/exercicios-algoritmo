@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Ex21 e Ex22 - Lucas Osakwe</title>
+        <style>
+            .semafaro_estrutura{
+                background-color: black;
+                width: 250px;
+                height: 400px;
+            }
+            .semafaro{
+                border-radius: 50%;
+                position: relative;
+                left: 70px; 
+            }
+            #red{
+                background-color: rgb(238, 121, 121);
+                width: 100px;
+                height: 100px;
+                cursor: pointer;
+            }
+            #yellow{
+                background-color: rgb(235, 235, 158);
+                width: 100px;
+                height: 100px;
+                cursor: pointer;
+            }
+            #green{
+                background-color: rgb(146, 236, 146);
+                width: 100px;
+                height: 100px;
+                cursor: pointer;
+            }
+            #text{
+                margin: 30px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="semafaro_estrutura">
+            <div class="semafaro" id="red" onclick="red();"></div>
+            <div class="semafaro" id="yellow" onclick="yellow();"></div>
+            <div class="semafaro" id="green" onclick="green();"></div>
+        </div>
+        <p id="text"></p>
+    </body>
+    <script>
+        function red() {
+            document.getElementById('text').innerHTML = 'Pare! Aguarde o verde!';
+            document.getElementById('text').style.color = 'white';
+            document.getElementById('red').style.backgroundColor = 'red';
+            document.getElementById('yellow').style.backgroundColor = 'rgb(235, 235, 158)';
+            document.getElementById('green').style.backgroundColor = 'rgb(146, 236, 146)';
+            document.getElementById('text').style.backgroundColor = 'red';
+        }
+        function yellow() {
+            document.getElementById('text').innerHTML = 'Só siga se estiver perto e rápido.';
+            document.getElementById('text').style.color = 'black';
+            document.getElementById('yellow').style.backgroundColor = 'yellow';
+            document.getElementById('red').style.backgroundColor = 'rgb(238, 121, 121)';
+            document.getElementById('green').style.backgroundColor = 'rgb(146, 236, 146)';
+            document.getElementById('text').style.backgroundColor = 'orange';
+        }
+        function green(){
+            document.getElementById('text').innerHTML = 'Siga =)';
+            document.getElementById('text').style.color = 'white';
+            document.getElementById('yellow').style.backgroundColor = 'rgb(235, 235, 158)';
+            document.getElementById('red').style.backgroundColor = 'rgb(238, 121, 121)';
+            document.getElementById('green').style.backgroundColor = 'green';
+            document.getElementById('text').style.backgroundColor = 'green';
+        }
+    </script>
+</html>

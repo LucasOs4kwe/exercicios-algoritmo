@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Ex22 - Lucas Osakwe</title>
+        <style>
+            #aparecer{
+                display: none;
+            }
+            .container{
+                margin: 20px;
+                display: flex;
+                justify-content: center;
+                color: white;
+                font-size: 18px;
+            }
+            .content{
+                text-align: center;
+                margin-top: 10%;
+                background-color: teal;
+                width: fit-content;
+                height: fit-content;
+                padding: 100px;
+                border-radius: 12px;
+            }
+            .content label{
+                display: block;
+                margin-top: 10px;
+            }
+            .content input{
+                width: 50px;
+            }
+            #desaparecer button{
+                margin: 10px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="content">
+                <div id="desaparecer">
+                    <label for="">Entregas para ZS <input type="text" id="entregasZS_inpt"></label>
+                    <label for="">Entregas para ZN <input type="text" id="entregasZN_inpt"></label>
+                    <label for="">Entregas para ZL <input type="text" id="entregasZL_inpt"></label>
+                    <label for="">Entragas para ZO <input type="text" id="entregasZO_inpt"></label>
+                    <button type="button" onclick="zonas();">Carregar agenda</button>
+                </div>
+                <div id="aparecer">
+                    <p>
+                        Entregas ZL: <span id="entregasZL_spn"></span><br>
+                        Entregas ZS: <span id="entregasZS_spn"></span><br>
+                        Entregas ZN: <span id="entregasZN_spn"></span><br>
+                        Entregas ZO: <span id="entregasZO_spn"></span><br>
+                        <b>Entregas restantes: <u><span id="entregasRestantes_spn"></span></u></b>
+                    </p>
+                    <div id="buttons">
+                        <button type="button" onclick="entregasZL();">Entregar ZL</button>
+                        <button type="button" onclick="entregasZS();">Entregar ZS</button>
+                        <button type="button" onclick="entregasZN();">Entregar ZN</button>
+                        <button type="button" onclick="entregasZO();">Entregar ZO</button>
+                    </div>
+                    <p id="teste"></p>
+                </div>
+            </div>
+        </div>
+    </body>
+    <script>
+        var zs = Number(entregasZS_inpt.value);
+        var zn = Number(entregasZN_inpt.value);
+        var zl = Number(entregasZL_inpt.value);
+        var zo = Number(entregasZO_inpt.value);
+        function zonas(){
+            var total = Number(entregasZL_inpt.value) + Number(entregasZS_inpt.value) + Number(entregasZN_inpt.value) + Number(entregasZO_inpt.value);
+            document.getElementById('entregasZL_spn').innerHTML = `${Number(entregasZL_inpt.value)}`;
+            document.getElementById('entregasZS_spn').innerHTML = `${Number(entregasZS_inpt.value)}`;
+            document.getElementById('entregasZN_spn').innerHTML = `${Number(entregasZN_inpt.value)}`;
+            document.getElementById('entregasZO_spn').innerHTML = `${entregasZO_inpt.value}`;
+            document.getElementById('entregasRestantes_spn').innerHTML = `${total}`;
+            document.getElementById('desaparecer').style.display = 'none';
+            document.getElementById('aparecer').style.display = 'block';
+        }
+        function entregasZS(){
+            zs = --entregasZS_inpt.value;
+            var total = Number(entregasZL_inpt.value) + Number(entregasZS_inpt.value) + Number(entregasZN_inpt.value) + Number(entregasZO_inpt.value);
+            document.getElementById('entregasRestantes_spn').innerHTML = `${total}`;
+            document.getElementById('entregasZS_spn').innerHTML = `${zs}`;
+        }
+        function entregasZN(){
+            zn = --entregasZN_inpt.value;
+            var total = Number(entregasZL_inpt.value) + Number(entregasZS_inpt.value) + Number(entregasZN_inpt.value) + Number(entregasZO_inpt.value);
+            document.getElementById('entregasRestantes_spn').innerHTML = `${total}`;
+            document.getElementById('entregasZN_spn').innerHTML = `${zn}`;
+        }
+        function entregasZL(){
+            zl = --entregasZL_inpt.value;
+            var total = Number(entregasZL_inpt.value) + Number(entregasZS_inpt.value) + Number(entregasZN_inpt.value) + Number(entregasZO_inpt.value);
+            document.getElementById('entregasRestantes_spn').innerHTML = `${total}`;
+            document.getElementById('entregasZL_spn').innerHTML = `${zl}`;
+        }
+        function entregasZO(){
+            zo = --entregasZO_inpt.value;
+            var total = Number(entregasZL_inpt.value) + Number(entregasZS_inpt.value) + Number(entregasZN_inpt.value) + Number(entregasZO_inpt.value);
+            document.getElementById('entregasRestantes_spn').innerHTML = `${total}`;
+            document.getElementById('entregasZO_spn').innerHTML = `${zo}`;
+        }
+    </script>
+</html>

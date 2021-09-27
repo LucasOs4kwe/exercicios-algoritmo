@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Ex06 - Lucas Osakwe</title>
+        <style>
+            #msg{
+                width: fit-content;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="content">
+                <select id="grandesSP_slct">
+                    <option value="1">São Paulo</option>
+                    <option value="2">Palmeiras</option>
+                    <option value="3">Santos</option>
+                    <option value="4">Corinthians</option>
+                </select>
+                <button type="button" onclick="grandesDeSP();">Fale sobre esse time</button>
+                <p id="msg"></p>
+            </div>
+        </div>
+    </body>
+    <script>
+        function grandesDeSP(){
+            if(grandesSP_slct.value == 1){
+                document.getElementById('msg').innerHTML = `Salve o tricolor paulista!`;
+                document.getElementById('msg').style.backgroundColor = "black";
+                document.getElementById('msg').style.color = "red";
+            }
+            else if(grandesSP_slct.value == 2){
+                document.getElementById('msg').innerHTML = `Salve o alviverde imponente!`;
+                document.getElementById('msg').style.backgroundColor = "green";
+                document.getElementById('msg').style.color = "white";
+            }
+            else if(grandesSP_slct.value == 3){
+                document.getElementById('msg').innerHTML = `Agora que dá a bola é o Santos`;
+                document.getElementById('msg').style.backgroundColor = "white";
+                document.getElementById('msg').style.color = "black";
+            }
+            else if(grandesSP_slct.value == 4){
+                document.getElementById('msg').innerHTML = `Salve o Corinthians!`;
+                document.getElementById('msg').style.backgroundColor = "black";
+                document.getElementById('msg').style.color = "white";
+            }
+        }
+    </script>
+</html>

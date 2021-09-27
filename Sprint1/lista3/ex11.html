@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Ex11 - Lucas Osakwe</title>
+    </head>
+    <body>
+        <div class="container">
+            <div class="content">
+                 <h1>Valor guardado no cofrinho: R$ <span id="din_cofrinho"><u>0.00</u></span></h1>
+                 Valor do depósito: <input type="text" placeholder="R$" id="valor_deposito">
+                 <button type="button" onclick="deposito();">Depositar</button>
+                 <button type="button" onclick="saque();">Tirar toda a grana</button>
+            </div>
+        </div>
+    </body>
+    <script>
+        var cofrinho = 0;
+        function deposito(){
+            var deposito = Number(valor_deposito.value);
+            var conta = deposito + cofrinho;
+            cofrinho =+ conta;
+            document.getElementById('din_cofrinho').innerHTML = `<u>${conta.toFixed(2)}</u>`; 
+            valor_deposito.value = '';
+        }
+        function saque(){
+            cofrinho = 0;
+            document.getElementById('din_cofrinho').innerHTML = `<u>${cofrinho.toFixed(2)}</u>`;
+        }
+    </script>
+</html>

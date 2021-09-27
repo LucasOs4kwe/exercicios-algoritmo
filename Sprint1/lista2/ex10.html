@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Ex09 - Lucas Osakwe</title>
+        <style>
+            #auxFilhos{
+                display: none;
+            }
+            .form-group{
+                margin: 30px 0 0 30px;
+            }
+            .form-group label{
+                margin: 10px;
+                font-weight: bold;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="form-group">
+            <label for="">Filhos com +10 anos <input type="text" id="n_filhos"></label>
+            <label for="">Filhos com -10 anos <input type="text" id="n_filhos2"></label>
+            <button type="button" onclick="calculo();">Calcular Auxílio Filhos</button>
+        </div>
+         
+         <div id="auxFilhos">
+             <h1>Auxílio Filhos</h1>
+             <p id="msg"></p>
+         </div>
+    </body>
+    <script>
+        function calculo(){
+            var c = Number(n_filhos.value * 20).toFixed(2);
+            var d = Number(n_filhos2.value * 30).toFixed(2);
+            var total = c + d;
+            document.getElementById('msg').innerHTML = `Você tem ${n_filhos2.value} filhos menores de 10 anos e ${n_filhos.value} filhos a partir de 10 anos, logo, seu "Auxílio Filhos" será de <b> R$ ${d}</b>`;
+            document.getElementById('auxFilhos').style.display = 'block';
+        }
+    </script>
+</html>

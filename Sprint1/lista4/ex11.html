@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Ex11 - Lucas Osakwe</title>
+    </head>
+    <body>
+        <div class="container">
+            <div class="content">
+                <select name="" id="moedas_slct">
+                    <option value="" selected disabled>Moedas</option>
+                    <option value="0.05">R$ 0,05</option>
+                    <option value="0.10">R$ 0,10</option>
+                    <option value="0.25">R$ 0,25</option>
+                    <option value="0.5">R$ 0,50</option>
+                    <option value="1">R$ 1,00</option>
+                </select>
+
+                <button onclick="deposito();">Depositar</button>
+                <button onclick="zerar();">Gastar a Grana</button>
+
+                <p>O saldo do cofrinho é de: R$ <span id="saldo_cofrinho"><b>0.00</b></span></p>
+                <p>A quantidade de operações foi: <span id="operacoes_spn"><b>0</b></span></p>
+                <p>Média dos depósitos: R$ <span id="media_spn"><b>0.00</b></span></p>
+            </div>
+        </div>
+    </body>
+    <script>
+        var cofrinho = 0;
+        var operacoes = 0;
+        var media = 0;
+        function deposito() {
+            //Criação de uma variável para identificar o value do option
+            var moeda = Number(moedas_slct.value);
+            //Soma desse value com a variável global no valor padrão de 0 (zero)
+            var soma = (Number(cofrinho) + Number(moeda));
+            //A soma do valor da moeda com o do cofrinho é o próprio valor que há no cofrinho
+            cofrinho = soma;
+            //Incremento para cada operação realizada
+            operacoes++;
+            media = (Number(cofrinho)/Number(operacoes));
+            document.getElementById('saldo_cofrinho').innerHTML = `<b>${cofrinho.toFixed(2)}</b>`;
+            document.getElementById('operacoes_spn').innerHTML = `<b>${operacoes}</b>`;
+            document.getElementById('media_spn').innerHTML = `<b>${media.toFixed(2)}</b>`;
+        }
+        function zerar(){
+            cofrinho = 0;
+            operacoes = 0;
+            media = 0;
+            document.getElementById('saldo_cofrinho').innerHTML = `<b>${cofrinho.toFixed(2)}</b>`;
+            document.getElementById('operacoes_spn').innerHTML = `<b>${operacoes}</b>`;
+            document.getElementById('media_spn').innerHTML = `<b>${media.toFixed(2)}</b>`;
+            moedas_slct.value = '';
+        }
+    </script>
+</html>

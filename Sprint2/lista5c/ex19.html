@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Ex19 - Lucas Osakwe</title>
+        <style>
+            *{
+                margin: 0;
+                padding: 0;
+                font-family: fantasy;
+            }
+            body{
+                background-color: rgb(87, 85, 85);
+            }
+            .container{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 100vh;
+                width: 100%;
+            }
+            #ini{
+                text-align: center;
+            }
+            #ini button{
+                padding: 15px;
+                font-size: 30px;
+                border-radius: 10px;
+                background-color: black;
+                color: white;
+                cursor: pointer;
+                border-style: none;
+            }
+            #ini button:hover{
+                background-color: white;
+                color: black;
+                transition-duration: 0.7s;
+                font-size: 35px;
+            }
+            #game{
+                display: none;
+            }
+            .cenario{
+                border: 6px dashed #fff;
+                height: fit-content;
+                background-image: url(https://gamerush.com.br/wp-content/uploads/2015/12/CenarioBisonAlpha2.gif);
+                background-repeat: no-repeat;
+                overflow: hidden;
+            }
+            .cenario img{
+                height: 400px;
+            }
+            .players{
+                display: flex;
+                justify-content: space-around;
+            }
+            .players img{
+                cursor: pointer;
+                height: 200px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="content">
+                <div id="ini">
+                    <button type="button" onclick="gameIni();">GAME</button>
+                </div>
+                <div id="game">
+                    <div class="cenario">
+                        <div class="players">
+                            <div id="first_player">
+                                <img src="https://www.fightersgeneration.com/np5/char/ssf2hd/ken-hdstance.gif" alt="">
+                            </div>
+                            <div id="second_player">
+                                <img src="http://1.bp.blogspot.com/-o7xCZFk53WI/VQmCdJ_XmHI/AAAAAAAANxc/-JntzBC5noA/s1600/Ryu%2B4.gif" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+    <script>
+        function gameIni(){
+            document.getElementById('ini').style.display = 'none';
+            document.getElementById('game').style.display = 'block';
+        }
+        function gameStart(){
+            
+        }
+    </script>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>VARIÁVEL GLOBAL</title>
+    </head>
+    <body>
+        <div class="container">
+            <p id="msg">Você já clicou <span id="contagem">0</span> vezes</p>
+            <div class="buttons">
+                <button type="button" id="btn-1" onclick="contador();">Clique aqui</button>
+                <button type="button" onclick="show();">Atualizar contador</button>
+            </div>
+        </div>
+    </body>
+    <script>
+        //VARIÁVEL GLOBAL;
+        //VÁLIDA PARA TODO O SCRIPT;
+        var cont = 0;
+        function contador(){
+            cont ++;
+        }
+        function show(){
+            document.getElementById('contagem').innerHTML = cont;
+        }
+    </script>
+</html>

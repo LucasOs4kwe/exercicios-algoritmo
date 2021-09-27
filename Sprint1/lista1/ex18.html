@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Ex18 - Lucas Osakwe</title>
+        <style>
+            #times img{
+                width: 200px;
+                margin: 50px;
+                cursor: pointer;
+            }
+            #times button{
+                margin: 10px;
+            }
+            #mundiais{
+                display: none;
+            }
+            #mundiais img{
+                margin: 30px;
+                width: 200px;
+            }
+            #hide_shield{
+                display: none;
+                text-align: center;
+            }
+            #hide_shield button{
+                font-size: 20px;
+                margin: 30px;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="times">
+            <img src="Imagens/sao-paulo-logo-escudo-1.png" alt="escudo_sp" onclick="show_sp();">
+            <img src="Imagens/santos.png" alt="escudo_santos" onclick="show_sfc();">
+            <img src="Imagens/palmeiras.png" alt="escudo_palmeiras" onclick="show_ssp();">
+            <img src="Imagens/corinthians.png" alt="escudo_cor" onclick="show_sccp();">
+            <button type="button" onclick="reset();">Resetar programa</button>
+            <button type="button" onclick="hide_shield();">Esconder escudos</button>
+        </div>
+        <div id="hide_shield">
+            <button type="button" onclick="show_shield();">Mostrar escudos</button>
+        </div>
+        
+        <div id="mundiais"><img src="" alt=""></div>
+    </body>
+    <script>
+        function show_sp(){
+            document.getElementById('mundiais').style.display = "block";
+            document.getElementById('mundiais').innerHTML = "<img src='Imagens/mundial.jpg'><img src='Imagens/mundial.jpg'><img src='Imagens/mundial.jpg'>" 
+        }
+        function show_sfc(){
+            document.getElementById('mundiais').style.display = "block";
+            document.getElementById('mundiais').innerHTML = "<img src='Imagens/mundial.jpg'><img src='Imagens/mundial.jpg'>" 
+        }
+        function show_ssp(){
+            document.getElementById('mundiais').style.display = "block";
+            document.getElementById('mundiais').innerHTML = "<img src='Imagens/51.jpg'>" 
+        }
+        function show_sccp(){
+            document.getElementById('mundiais').style.display = "block";
+            document.getElementById('mundiais').innerHTML = "<img src='Imagens/mundial.jpg'><img src='Imagens/mundial.jpg'>" 
+        }
+        function reset(){
+            document.getElementById('mundiais').style.display = "none";
+        }
+        function hide_shield(){
+            document.getElementById('times').style.display = "none";
+            document.getElementById('hide_shield').style.display = "block";
+            document.getElementById('mundiais').style.display = "none";
+        }
+        function show_shield(){
+            document.getElementById('times').style.display = "block";
+            document.getElementById('hide_shield').style.display = "none";
+        }
+    </script>
+</html>

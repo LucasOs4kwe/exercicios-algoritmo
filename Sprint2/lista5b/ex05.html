@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Ex05 - Lucas Osakwe</title>
+    </head>
+    <body>
+        <div class="container">
+            <div class="content">
+                <input type="text" placeholder="1ª nota" id="nota1">
+                <input type="text" placeholder="2ª nota" id="nota2">
+                <button type="button" onclick="nota();">Verificar situação</button>
+            </div>
+        </div>
+    </body>
+    <script>
+        function nota(){
+            var media = (Number(nota1.value) + Number(nota2.value)) / 2
+            if(media > 6){
+                alert("Parabéns, aprovado!");
+            }
+            else{
+                alert("Tente outra vez...");
+            }
+            nota1.value = '';
+            nota2.value = '';
+        }
+    </script>
+</html>

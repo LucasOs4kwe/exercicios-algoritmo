@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Ex11 - Lucas Osakwe</title>
+        <style>
+            .container{
+                margin: 30px;
+            }
+            .content{
+                display: inline;
+            }
+            #img img, #img2 img, #img3 img{ 
+                width: 250px;
+                height: 200px;
+                border-radius: 12px;
+            }
+            #img,#img2,#img3{
+                margin: 30px;
+            }
+            .imgs{
+                display: inline-block;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="content">
+                <select id="mes_slct" onchange="estacaoAno();">
+                    <option value="" selected disabled>-Selecione uma estação-</option>
+                    <option value="verao">Verão</option>
+                    <option value="inverno">Inverno</option>
+                    <option value="outono">Outono</option>
+                    <option value="primavera">Primavera</option>
+                </select>
+                <div id="img" class="imgs"></div>
+                <div id="img2" class="imgs"></div>
+                <div id="img3" class="imgs"></div>
+            </div>
+        </div>
+    </body>
+    <script>
+        function estacaoAno(){
+            var estacao = mes_slct.value;
+            if(estacao == "verao"){
+                document.getElementById('img').innerHTML = '';
+                document.getElementById('img2').innerHTML = '';
+                document.getElementById('img3').innerHTML = '';
+                document.getElementById('img').innerHTML = `<img src="https://trabalhosparaescola.com.br/wp-content/uploads/2019/06/3c3d180b39a9621e72f692bee226ce1c.jpg" alt="">`;
+                document.getElementById('img2').innerHTML = `<img src="https://static.mundoeducacao.uol.com.br/mundoeducacao/2020/11/folhas.jpg" alt="">`;
+                document.getElementById('img3').innerHTML = `<img src="https://static.mundoeducacao.uol.com.br/mundoeducacao/2019/08/primavera.jpg" alt="">`;
+                
+            }else if(estacao == "inverno"){
+                document.getElementById('img').innerHTML = '';
+                document.getElementById('img2').innerHTML = '';
+                document.getElementById('img3').innerHTML = '';
+                document.getElementById('img').innerHTML = `<img src="https://cdn.abcdoabc.com.br/verao_5508634b.jpg" alt="">`;
+                document.getElementById('img2').innerHTML = `<img src="https://static.mundoeducacao.uol.com.br/mundoeducacao/2019/08/primavera.jpg" alt="">`;
+                document.getElementById('img3').innerHTML = `<img src="https://static.mundoeducacao.uol.com.br/mundoeducacao/2020/11/folhas.jpg" alt="">`;
+                
+            }else if(estacao == "primavera"){
+                document.getElementById('img').innerHTML = '';
+                document.getElementById('img2').innerHTML = '';
+                document.getElementById('img3').innerHTML = '';
+                document.getElementById('img').innerHTML = `<img src="https://cdn.abcdoabc.com.br/verao_5508634b.jpg" alt="">`;
+                document.getElementById('img2').innerHTML = `<img src="https://trabalhosparaescola.com.br/wp-content/uploads/2019/06/3c3d180b39a9621e72f692bee226ce1c.jpg" alt="">`;
+                document.getElementById('img3').innerHTML = `<img src="https://static.mundoeducacao.uol.com.br/mundoeducacao/2020/11/folhas.jpg" alt="">`;
+               
+            }else{
+                document.getElementById('img').innerHTML = '';
+                document.getElementById('img2').innerHTML = '';
+                document.getElementById('img3').innerHTML = '';
+                document.getElementById('img').innerHTML = `<img src="https://static.mundoeducacao.uol.com.br/mundoeducacao/2019/080/primavera.jpg" alt="">`;
+                document.getElementById('img2').innerHTML = `<img src="https://cdn.abcdoabc.com.br/verao_5508634b.jpg" alt="">`;
+                document.getElementById('img3').innerHTML = `<img src="https://trabalhosparaescola.com.br/wp-content/uploads/2019/06/3c3d180b39a9621e72f692bee226ce1c.jpg" alt="">`;
+            }
+        }
+    </script>
+</html>

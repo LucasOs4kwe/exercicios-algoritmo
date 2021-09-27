@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Ex13 - Lucas Osakwe</title>
+    </head>
+    <body>
+        <div class="container">
+            <div class="content">
+                <p>
+                    Porções de pão francês: <span id="paoFrances_spn"><u>0</u></span><br>
+                    Porções de carne bovina: <span id="carneBovina"><u>0</u></span><br>
+                    Porções de carne de soja: <span id="carneSoja"><u>0</u></span><br>
+                    Porções de arroz com feijão: <span id="arrozFeijao"><u>0</u></span>
+                </p>
+                <p><b>Total de calorias: <span id="total_calorias"><u>0</u></span></b></p>
+
+                <button type="button" onclick="a();">Comer um pão francês</button>
+                <button type="button" onclick="b();">Comer porção de carne bovina</button>
+                <button type="button" onclick="c();">Comer porção de carne de soja</button>
+                <button type="button" onclick="d();">Comer porção de arroz com feijão</button>
+                <button type="button" onclick="reload();">Recomeçar</button>
+            </div>
+        </div>
+    </body>
+    <script>
+        var paoFrances = 0;
+        var carneBovina = 0;
+        var carneSoja = 0;
+        var arrozFeijao = 0;
+        var total = 0;
+        function a(){
+            paoFrances++;
+            total += 50;
+            document.getElementById('paoFrances_spn').innerHTML = `<u>${paoFrances}</u>`;
+            document.getElementById('total_calorias').innerHTML = `<u>${total}</u>`;
+        }
+        function b(){
+            carneBovina++;
+            total += 100;
+            document.getElementById('carneBovina').innerHTML = `<u>${carneBovina}</u>`;
+            document.getElementById('total_calorias').innerHTML = `<u>${total}</u>`;
+        }
+        function c(){
+            carneSoja++;
+            total += 30;
+            document.getElementById('carneSoja').innerHTML = `<u>${carneSoja}</u>`;
+            document.getElementById('total_calorias').innerHTML = `<u>${total}</u>`;
+        }
+        function d(){
+            arrozFeijao++;
+            total += 120;
+            document.getElementById('arrozFeijao').innerHTML = `<u>${arrozFeijao}</u>`;
+            document.getElementById('total_calorias').innerHTML = `<u>${total}</u>`;
+        }
+        function reload(){
+            paoFrances = 0;
+            carneBovina = 0;
+            carneSoja = 0;
+            arrozFeijao = 0;
+            total = 0;
+            document.getElementById('paoFrances_spn').innerHTML = `<u>${paoFrances}</u>`;
+            document.getElementById('carneBovina').innerHTML = `<u>${carneBovina}</u>`;
+            document.getElementById('carneSoja').innerHTML = `<u>${carneSoja}</u>`;
+            document.getElementById('arrozFeijao').innerHTML = `<u>${arrozFeijao}</u>`;
+            document.getElementById('total_calorias').innerHTML = `<u>${total}</u>`;
+        }
+    </script>
+</html>

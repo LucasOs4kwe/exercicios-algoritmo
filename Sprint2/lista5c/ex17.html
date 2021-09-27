@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Ex17 - Lucas Osakwe</title>
+    </head>
+    <body>
+        <div class="container">
+            <div class="content">
+                <h1>Pizza Rãti</h1>
+                Distância (em km) até sua casa: <input type="text" id="km_inpt">
+                <button type="button" onclick="pizzaria();">Verificar disponibilidade</button>
+                <p id="msg"></p>
+            </div>
+        </div>
+    </body>
+    <script>
+        function pizzaria(){
+            var km = Number(km_inpt.value);
+            if(km >= 25){
+                document.getElementById('msg').innerHTML = `A Pizza Rãti não entrega neste endereço!`;
+            }else if(km < 25 && km > 5){
+                document.getElementById('msg').innerHTML = `A sua pizza será entregue, porém o valor de entrega é de R$ 25,00`;
+            }else{
+                document.getElementById('msg').innerHTML = `A sua pizza será entregue e não custará nada para você :)`;
+            }
+        }
+    </script>
+</html>

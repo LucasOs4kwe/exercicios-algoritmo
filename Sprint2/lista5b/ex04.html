@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Ex04 - Lucas Osakwe</title>
+        <style>
+            .container{
+                margin: 20px;
+            }
+            #img{
+                display: block;
+            }
+            #img img{
+                width: 350px;
+                margin-top: 20px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="content">
+                <p>Insira a sua frequência</p>
+                <input type="text" id="freq_inpt">%
+                <button type="button" onclick="freq();">Analisar frequência</button>
+                <div id="img"></div>
+            </div>
+        </div>
+    </body>
+    <script>
+        function freq(){
+            var frequencia = Number(freq_inpt.value);
+            if(frequencia > 50){
+                document.getElementById('img').innerHTML = `<img src="img/estudioso.jpg" alt="">`;
+            }else{
+                document.getElementById('img').innerHTML = `<img src="img/turista.jpg" alt="">`;
+            }
+        }
+    </script>
+</html>

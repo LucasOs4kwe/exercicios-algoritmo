@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Ex10 - Lucas Osakwe</title>
+    </head>
+    <body>
+        <div class="container">
+            <div class="content">
+                <img src="https://moodle.digitalschool.com.br/pluginfile.php/3753/mod_page/content/2/image.png" alt="">
+                <div class="buttons">
+                    <button type="button" onclick="VIII_passagens();">08 passagens</button>
+                    <button type="button" onclick="XX_passagens();">20 passagens</button>
+                    <button type="button" onclick="L_passagens();">50 passagens</button>
+                </div>
+                <p id="msg"></p>
+            </div>
+        </div>
+    </body>
+    <script>
+        function VIII_passagens(){
+            var valor_cheio = 8 * 4.40;
+            var desconto = (1 - (32.45 / valor_cheio)) * 100;
+            var bonus = (35.20 - 32.45) / 4.40;
+            document.getElementById('msg').innerHTML = `Ao comprar 8 passagens, você pagou ${desconto.toFixed(1)}% a menos. É como se tivesse ganhado ${bonus.toFixed(1)} passagens de "bônus".`;
+        }
+        function XX_passagens(){
+            var valor_cheio = 20 * 4.40;
+            var desconto = (1 - (78.65 / valor_cheio)) * 100;
+            var bonus = (88 - 78.65) / 4.40;
+            document.getElementById('msg').innerHTML = `Ao comprar 20 passagens, você pagou ${desconto.toFixed(1)}% a menos. É como se tivesse ganhado ${bonus.toFixed(1)} passagens de "bônus".`;
+        }
+        function L_passagens(){
+            var valor_cheio = 50 * 4.40;
+            var desconto = (1 - (192.41 / valor_cheio)) * 100;
+            var bonus = (220 - 192.41) / 4.40;
+            document.getElementById('msg').innerHTML = `Ao comprar 50 passagens, você pagou ${desconto.toFixed(1)}% a menos. É como se tivesse ganhado ${bonus.toFixed(1)} passagens de "bônus".`;
+        }
+    </script>
+</html>

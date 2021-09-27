@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Ex10 - Lucas Osakwe</title>
+    </head>
+    <body>
+        <div class="contain">
+            <div class="content">
+                Digite seu nome: <input type="text" id="nome_inpt">
+                Saldo em conta: <input type="text" placeholder="R$" id="saldo_inpt">
+                <button type="button" onclick="bancoSPTO();">Verificar conta</button>
+                <p id="msg"></p>
+            </div>
+        </div>
+    </body>
+    <script>
+        function bancoSPTO(){
+            var saldo = Number(saldo_inpt.value);
+            if(saldo < 0){
+                document.getElementById('msg').innerHTML = `Com saldo de R$ ${saldo.toFixed(2)} o cliente ${nome_inpt.value} está com saldo DEVEDOR.`;
+            }else if(saldo < 2000){
+                document.getElementById('msg').innerHTML = `Com saldo de R$ ${saldo.toFixed(2)} o cliente ${nome_inpt.value} está com o saldo NORMAL`;
+            }else if(saldo < 5000){
+                document.getElementById('msg').innerHTML = `Com saldo de R$ ${saldo.toFixed(2)} o cliente ${nome_inpt.value} está com o saldo ACIMA DA MÉDIA`;
+            }else{
+                document.getElementById('msg').innerHTML = `Com saldo de R$ ${saldo.toFixed(2)} o cliente ${nome_inpt.value} TEM PERFIL DE INVESTIDOR`;
+            }
+            nome_inpt.value = '';
+            saldo_inpt.value = '';
+        }
+    </script>
+</html>

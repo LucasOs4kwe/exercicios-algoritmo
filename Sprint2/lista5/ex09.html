@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Ex09 - Lucas Osakwe</title>
+        <style>
+            .container{
+                margin: 20px;
+            }
+            .inputs input{
+                display: block;
+                margin-top: 3px;
+            }
+            .inputs,.button{
+                margin: 10px;
+            }
+            #serie_inpt{
+                margin-bottom: 10px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="content">
+                <div class="inputs">
+                    <label for="">Qual foi a última série (SITCOM) que você viu? <input type="text" id="serie_inpt"></label>
+                    <label for="">Quantos episódios dessa série você já viu? <input type="text" id="nmr_ep"></label>
+                </div>
+                <div class="button">
+                    <button type="button" onclick="streaming();">Verificar nível</button>
+                </div>
+                <p id="msg"></p>
+                <p id="msg2"></p>
+            </div>
+        </div>
+    </body>
+    <script>
+        function streaming(){
+            var ep = 22;
+            var tempoEP = Number(nmr_ep.value) * ep;
+            var horas = tempoEP / 60;
+            document.getElementById('msg').innerHTML = `Vejo que você gosta da série ${serie_inpt.value}`;
+            if(horas > 30){
+                document.getElementById('msg2').innerHTML = `Uau, você realmente gosta dessa série!`;
+            }
+        }
+    </script>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Ex01 - Lucas Osakwe</title>
+        <style>
+            .container{
+                margin: 50px;
+                display: flex;
+                justify-content: center;
+            }
+            .content{
+                background-color: #fff;
+                width: fit-content;
+                height: fit-content;
+                box-shadow: 0 0 1em rgb(182, 180, 180);
+                padding: 100px;
+                border-radius: 12px;
+                text-align: center;
+            }
+            .buttons button{
+                margin: 5px;
+            }
+            #msg_imc{
+                font-size: 20px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="content">
+                <h1>Cálculo de IMC</h1>
+                <label for=""><input type="text" id="peso_inpt" placeholder="Peso"></label>
+                <label for=""><input type="text" id="altura_inpt" placeholder="Altura (ex. 1.54)"></label>
+                <div class="buttons">
+                    <button type="button" onclick="calculo_imc();">Calcular IMC</button>
+                </div>
+                <p id="msg_imc"></p>
+            </div>
+        </div>
+    </body>
+    <script>
+        function calculo_imc(){
+            var imc = Number(peso_inpt.value / (altura_inpt.value * altura_inpt.value)).toFixed(1);
+            document.getElementById('msg_imc').innerHTML = `Seu IMC é de ${imc}`;
+            peso_inpt.value = '';
+            altura_inpt.value = '';
+        }
+    </script>
+</html>

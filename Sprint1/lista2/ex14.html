@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Ex14 e Ex15 - Lucas Osakwe</title>
+        <style>
+            .container{
+                margin: 20px;
+            }
+            #resultado_eleicao{
+                display: none;
+            }
+            .votacao label input{
+                display: block;
+                margin-bottom: 10px;
+            }
+            .votacao p{
+                font-weight: bold;
+            }
+            .container button{
+                background-color: white;
+                border-radius: 5px;
+                font-size: 15px;
+                margin: 40px 0 20px 40px;
+                cursor: pointer;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="votacao">
+                <p>1 - Digite a quantidade de votos recebidos pelos seguintes candidatos</p>
+                <label for="">Zé Buduia<input type="text" id="ze_inpt"></label>
+                <label for="">Maria Bigodenha<input type="text" id="maria_inpt"></label>
+                <p>2 - Digite a quantidade de votos brancos e nulos</p>
+                <label for="">Brancos<input type="text" id="white_inpt"></label>
+                <label for="">Nulos<input type="text" id="null_inpt"></label>
+            </div>
+            <button type="button" onclick="votos();">Resultado da eleição</button>
+            <div id="resultado_eleicao">
+                <p>
+                    <b>Total de votos: <span id="total_spn"></span></b><br>
+                    <b>Zé Ruela</b>: <span id="zeRuela_spn"></span>
+                    <div style="background-color: green; height: 30px;" id="barra_ze"></div>
+                    <b>Maria Bigodenha</b>: <span id="maria_spn"></span>
+                    <div style="background-color: red; height: 30px;" id="barra_maria"></div>
+                    <div></div>
+                    <b>Inválidos</b>: <span id="invalidos_spn"></span>
+                    <div style="background-color: gray; height: 30px;" id="barra_null"></div>
+                </p>
+            </div>
+        </div>
+    </body>
+    <script>
+        function votos(){
+            var total = Number(ze_inpt.value) + Number(maria_inpt.value) + Number(null_inpt.value) + Number(white_inpt.value);
+            var ze = Number((ze_inpt.value*100) / total).toFixed(2);
+            var maria = Number((maria_inpt.value*100) / total).toFixed(2);
+            var invalidos = (((Number(white_inpt.value) + Number(null_inpt.value))*100)/ total).toFixed(2);
+
+            document.getElementById('total_spn').innerHTML = `${total}`;
+            document.getElementById('zeRuela_spn').innerHTML = `${ze}% (${ze_inpt.value} votos)`;
+            document.getElementById('maria_spn').innerHTML = `${maria}% (${maria_inpt.value} votos)`;
+            document.getElementById('invalidos_spn').innerHTML = `${invalidos}% (${Number(white_inpt.value) + Number(null_inpt.value)} votos)`;
+            document.getElementById('resultado_eleicao').style.display = 'block';
+            document.getElementById('barra_ze').style.width = `${ze}` + "%";
+            document.getElementById('barra_maria').style.width = `${maria}` + "%";
+            document.getElementById('barra_null').style.width = `${invalidos}` + "%";
+        }
+    </script>
+</html>

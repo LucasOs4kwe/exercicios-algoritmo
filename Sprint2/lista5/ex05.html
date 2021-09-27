@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Ex05 - Lucas Osakwe</title>
+    </head>
+    <body>
+        <div class="container">
+            <div class="content">
+                Quantidade de kWh por mês: <input type="text" placeholder="kWh" id="qtd_kWh">
+                <button type="button" onclick="contaLuz();">Calcular conta de luz</button>
+            </div>
+        </div>
+    </body>
+    <script>
+        function contaLuz(){
+            var valor = Number(qtd_kWh.value) * 0.85;
+            if(qtd_kWh.value < 100){
+               valor = valor * 0.9;
+            }
+            alert(`Total da conta de luz: R$ ${valor.toFixed(2)}`);
+            qtd_kWh.value = '';
+        }
+    </script>
+</html>

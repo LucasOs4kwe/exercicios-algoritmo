@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Ex14 - Lucas Osakwe</title>
+        <style>
+            .container .content{
+                text-align: center;
+            }
+            .content button{
+                font-size: 25px;
+                border-radius: 5px;
+                padding: 5px;
+                background-color: white;
+            }
+            .content button:hover{
+                background-color: black;
+                color: white;
+                cursor: pointer;
+            }
+            #imgs img{
+                width: 210px;
+                display: block;
+                margin: 30px;
+                cursor: pointer;
+            }
+            #imgs{
+                display: none;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="content">
+                <button type="button" onclick="iniciar();">Iniciar Jogo</button>
+                <div id="imgs">
+                    <img src="https://upload.wikimedia.org/wikipedia/pt/a/ab/Scorpion.png" alt="" onclick="luta1();">
+                    <div style="background-color: red; height: 30px;" id="lutador1_div"></div>
+                    <img src="https://upload.wikimedia.org/wikipedia/pt/8/81/Sub-Zero.png" alt="" onclick="luta2();">
+                    <div style="background-color: green; height: 30px;" id="lutador2_div"></div>
+                    <p>Golpes sofridos pelo lutador 1: <span id="lutador1_spn">0</span></p>
+                    <p>Golpes sofridos pelo lutador 2: <span id="lutador2_spn">0</span></p>
+                </div>
+            </div>
+        </div>
+    </body>
+    <script>
+        var lutador1 = 1;
+        var lutador2 = 1;
+        var width1 = 100;
+        var width2 = 100;
+        function iniciar(){
+            document.getElementById('imgs').style.display = "block";
+        }
+        function luta1(){
+            width1 -= 5;
+            document.getElementById('lutador1_div').style.width = width1 + "%";
+            document.getElementById('lutador1_spn').innerHTML = `${lutador1}`;
+            lutador1++
+        }
+        function luta2(){
+            width2 -= 5;
+            document.getElementById('lutador2_div').style.width = width2 + "%";
+            document.getElementById('lutador2_spn').innerHTML = `${lutador2}`;
+            lutador2++
+        }
+    </script>
+</html>

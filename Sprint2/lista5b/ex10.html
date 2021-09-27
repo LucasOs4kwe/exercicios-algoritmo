@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Ex10 - Lucas Osakwe</title>
+        <style>
+            .img img{
+                width: 150px;
+                height: 150px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="content">
+                <label for=""><input type="text" placeholder="Sabor da pizza" autofocus id="saborPizza_inpt"></label><br>
+
+                <select id="item1_slct" onchange="pizza1();">
+                    <option value="" selected>- Item 1 -</option>
+                    <option value="6.5">Queijo</option>
+                    <option value="6">Presunto</option>
+                    <option value="2">Ovo</option>
+                    <option value="5">Palmito</option>
+                    <option value="10">Frango</option>
+                    <option value="5">Catupiry</option>
+                </select>
+                <div id="img1" class="img"></div>
+                <select id="item2_slct" onchange="pizza2();">
+                    <option value="" selected>- Item 2 -</option>
+                    <option value="6.5">Queijo</option>
+                    <option value="6">Presunto</option>
+                    <option value="2">Ovo</option>
+                    <option value="5">Palmito</option>
+                    <option value="10">Frango</option>
+                    <option value="5">Catupiry</option>
+                </select>
+                <div id="img2" class="img"></div>
+                <select id="item3_slct" onchange="pizza3();">
+                    <option value="" selected>- Item 3 -</option>
+                    <option value="6.5">Queijo</option>
+                    <option value="6">Presunto</option>
+                    <option value="2">Ovo</option>
+                    <option value="5">Palmito</option>
+                    <option value="10">Frango</option>
+                    <option value="5">Catupiry</option>
+                </select>
+                <div id="img3" class="img"></div>
+                <button type="button" onclick="precoPizza();">Calcular preço</button>
+                <p id="msg"></p>
+            </div>
+        </div>
+    </body>
+    <script>
+        function pizza1(){
+            if(item1_slct.value == 6.5){
+                img1.innerHTML = '';
+                document.getElementById('img1').innerHTML = `<img src="https://static.paodeacucar.com/img/uploads/1/706/600706.JPG">`;
+            }else if(item1_slct.value == 6){
+                img1.innerHTML = '';
+                document.getElementById('img1').innerHTML = `<img src="https://cptstatic.s3.amazonaws.com/imagens/enviadas/materias/materia17798/como-fazer-presunto-artigos-cursos-cpt.jpg">`;
+            }else if(item1_slct.value == 2){
+                img1.innerHTML = '';
+                document.getElementById('img1').innerHTML = `<img src="https://conteudo.imguol.com.br/c/entretenimento/52/2020/07/06/ovo-1594070430431_v2_450x337.jpg">`;
+            }else if(item1_slct.value == 5){
+                img1.innerHTML = '';
+                document.getElementById('img1').innerHTML = `<img src="https://cptstatic.s3.amazonaws.com/imagens/enviadas/materias/materia27058/processamento-palmito-cursos-cpt.jpg">`;
+            }else if(item1_slct.value == 10){
+                img1.innerHTML = '';
+                document.getElementById('img1').innerHTML = `<img src="https://t2.rg.ltmcdn.com/pt/images/4/7/4/img_frango_desfiado_ao_forno_4474_paso_0_600.jpg">`;
+            }else if(item1_slct.value == 5){
+                img1.innerHTML = '';
+                document.getElementById('img1').innerHTML = `<img src="https://d3o3bdzeq5san1.cloudfront.net/40/39939.jpg">`;
+            }else{
+                img1.innerHTML = '';
+            }
+        }
+        function pizza2(){
+            if(item2_slct.value == 6.5){
+                img2.innerHTML = '';
+                document.getElementById('img2').innerHTML = `<img src="https://static.paodeacucar.com/img/uploads/1/706/600706.JPG">`;
+            }else if(item2_slct.value == 6){
+                img2.innerHTML = '';
+                document.getElementById('img2').innerHTML = `<img src="https://cptstatic.s3.amazonaws.com/imagens/enviadas/materias/materia17798/como-fazer-presunto-artigos-cursos-cpt.jpg">`;
+            }else if(item2_slct.value == 2){
+                img2.innerHTML = '';
+                document.getElementById('img2').innerHTML = `<img src="https://conteudo.imguol.com.br/c/entretenimento/52/2020/07/06/ovo-1594070430431_v2_450x337.jpg">`;
+            }else if(item2_slct.value == 5){
+                img2.innerHTML = '';
+                document.getElementById('img2').innerHTML = `<img src="https://cptstatic.s3.amazonaws.com/imagens/enviadas/materias/materia27058/processamento-palmito-cursos-cpt.jpg">`;
+            }else if(item2_slct.value == 10){
+                img2.innerHTML = '';
+                document.getElementById('img2').innerHTML = `<img src="https://t2.rg.ltmcdn.com/pt/images/4/7/4/img_frango_desfiado_ao_forno_4474_paso_0_600.jpg">`;
+            }else if(item2_slct.value == 5){
+                img2.innerHTML = '';
+                document.getElementById('img2').innerHTML = `<img src="https://d3o3bdzeq5san1.cloudfront.net/40/39939.jpg">`;
+            }else{
+                img2.innerHTML = '';
+            }
+        }
+        function pizza3(){
+            if(item3_slct.value == 6.5){
+                img3.innerHTML = '';
+                document.getElementById('img3').innerHTML = `<img src="https://static.paodeacucar.com/img/uploads/1/706/600706.JPG">`;
+            }else if(item3_slct.value == 6){
+                img3.innerHTML = '';
+                document.getElementById('img3').innerHTML = `<img src="https://cptstatic.s3.amazonaws.com/imagens/enviadas/materias/materia17798/como-fazer-presunto-artigos-cursos-cpt.jpg">`;
+            }else if(item3_slct.value == 2){
+                img3.innerHTML = '';
+                document.getElementById('img3').innerHTML = `<img src="https://conteudo.imguol.com.br/c/entretenimento/52/2020/07/06/ovo-1594070430431_v2_450x337.jpg">`;
+            }else if(item3_slct.value == 5){
+                img3.innerHTML = '';
+                document.getElementById('img3').innerHTML = `<img src="https://cptstatic.s3.amazonaws.com/imagens/enviadas/materias/materia27058/processamento-palmito-cursos-cpt.jpg">`;
+            }else if(item3_slct.value == 10){
+                img3.innerHTML = '';
+                document.getElementById('img3').innerHTML = `<img src="https://t2.rg.ltmcdn.com/pt/images/4/7/4/img_frango_desfiado_ao_forno_4474_paso_0_600.jpg">`;
+            }else if(item3_slct.value == 5){
+                img3.innerHTML = '';
+                document.getElementById('img3').innerHTML = `<img src="https://d3o3bdzeq5san1.cloudfront.net/40/39939.jpg">`;
+            }else{
+                img3.innerHTML = '';
+            }
+        }
+        function precoPizza(){
+            var txt = saborPizza_inpt.value;
+            var total = Number(item1_slct.value) + Number(item2_slct.value) + Number(item3_slct.value);
+            document.getElementById('msg').innerHTML = `<b>A pizza de ${txt.toUpperCase()} vai custar um total de R$ <u>${total.toFixed(2)}</u></b>`;
+            saborPizza_inpt.value = '';
+        }
+    </script>
+</html>

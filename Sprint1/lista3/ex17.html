@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Ex17 - Lucas Osakwe</title>
+    </head>
+    <body>
+        <div class="container">
+            <div class="content">
+                <p id="msg">O dobro de 1 é 2</p>
+                <button type="button" onclick="dobrar();">Dobrar</button>
+            </div>
+        </div>
+    </body>
+    <script>
+        var num = 1;
+        function dobrar(){
+            var dobro = num * 2;
+            num = dobro;
+            dobro *= 2;
+            document.getElementById('msg').innerHTML = `O dobro de ${num} é ${dobro}`;
+        }
+    </script>
+</html>

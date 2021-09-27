@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Ex09 - Lucas Osakwe</title>
+    </head>
+    <body>
+        <div class="container">
+            <div class="content">
+                <h1>SkolVírus</h1>
+                Número de pessoas infectadas atualmente: <input type="text" id="nmr_infectados">
+                <div class="buttons">
+                    <div class="ontem">
+                        <button type="button" onclick="ontem();">Quantas pessoas infectadas ontem</button>
+                        <p id="msg"></p>
+                    </div>
+                    <div class="amanha">
+                        <button type="button" onclick="amanha();">Quantas pessoas infectadas amanhã?</button>
+                        <p id="msg2"></p>
+                    </div>
+                    <div class="I_MES">
+                        <button type="button" onclick="I_MES();">Quantas pessoas infectadas daqui 1 mês</button>
+                        <p id="msg3"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+    <script>
+        function ontem(){
+            var infectadas = Number(nmr_infectados.value);
+            infectadas -= 35;
+            document.getElementById('msg').innerHTML = `Ontem haviam ${infectadas} pessoas infectadas.`;
+        }
+        function amanha(){
+            var infectadas = Number(nmr_infectados.value);
+            infectadas += 35;
+            document.getElementById('msg2').innerHTML = `Amanhã haverão ${infectadas} pesssoas infectadas.`;
+        }
+        function I_MES(){
+            var infectadas = Number(nmr_infectados.value);
+            infectadas += (30*35);
+            document.getElementById('msg3').innerHTML = `Daqui a 1 mês haverão ${infectadas} pesssoas infectadas.`;
+        }
+    </script>
+</html>

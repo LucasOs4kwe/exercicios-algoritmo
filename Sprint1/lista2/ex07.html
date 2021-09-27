@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Ex07 - Lucas Osakwe</title>
+    </head>
+    <body>
+        <input type="text" placeholder="Digite o nome do aluno" id="primeiro_inpt">
+        <input type="text" placeholder="Aulas totais do curso" id="segundo_inpt">
+        <input type="text" placeholder="Faltas do aluno" id="terceiro_inpt">
+        <button type="button" onclick="frequencia();">Calcular frequência</button>
+        <p id="msg"></p>
+        <div style="background-color: red; height: 20px; display: none;" id="barra"></div>
+    </body>
+    <script>
+        function frequencia(){
+            var pp = (((Number(segundo_inpt.value) - Number(terceiro_inpt.value)) * 100) / (Number(segundo_inpt.value))).toFixed(1);
+            document.getElementById('msg').innerHTML = `<span style="color: blue"> Olá, ${primeiro_inpt.value}, sua frequência é de </span> <b style="color: green">${pp}%<b>`;
+            document.getElementById('barra').style.width = pp + "%";
+            document.getElementById('barra').style.display = "block"; 
+        }
+    </script>
+</html>

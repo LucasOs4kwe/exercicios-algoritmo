@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Ex15 - Lucas Osakwe</title>
+    </head>
+    <body>
+        <div class="container">
+            <div class="content">
+                <p>Digite os catetos do triângulo</p>
+                <input type="text" placeholder="a" id="lado_a">
+                <input type="text" placeholder="b" id="lado_b">
+                <button type="button" onclick="calc();">Calcular hipotenusa</button>
+                <p id="msg"></p>
+            </div>
+        </div>
+    </body>
+    <script>
+        function calc() {
+            var total_cat = (Number(lado_a.value)**2) + (Number(lado_b.value)**2);
+            var hipotenusa = total_cat ** (1/2);
+            document.getElementById('msg').innerHTML = `O valor da hipotenusa é igual a <b>${hipotenusa.toFixed(2)} cm</b>`;
+        }
+    </script>
+</html>

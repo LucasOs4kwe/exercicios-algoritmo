@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Ex05 - Lucas Osakwe</title>
+        <style>
+            .form label{
+                display: block;
+                margin: 10px;
+            }
+            .form input{
+                margin-left: 5px;
+                width: 50px;
+            }
+            .form{
+                text-align: center;
+            }
+            .button{
+                text-align: center;
+                margin-top: 20px;
+            }
+            .content{
+                margin: 30px;
+            }
+            .content p{
+                text-align: center;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="content">
+            <div class="form">
+                <label for="">Valor da passagem do ônibus<input type="text" required id="primeiro"></label>
+                <label for="">Quantas viagens de ônibus você faz por mês?<input type="text" required id="segundo"></label>
+            </div>
+            <div class="button">
+                <button type="button" onclick="vt();">Calcular VT</button>
+            </div>
+            <p id="calculo_vt"></p>
+        </div>
+    </body>
+    <script>
+        function vt(){
+            var vt = (Number((primeiro.value)*(segundo.value))).toFixed(2);
+            document.getElementById('calculo_vt').innerHTML = `Você vai gastar R$ ${vt} por mês com ônibus`;
+        }
+    </script>
+</html>
